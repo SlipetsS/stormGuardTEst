@@ -1,0 +1,153 @@
+/*!
+Theme Name: Storm Theme
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: custom-theme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Custom Theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+@import "compass";
+@import "compass/reset";
+
+$colorYellow : #ffdd00;
+
+$font-family-sans-serif: "Helvetica Neue", Arial, sans-serif;
+
+
+body {
+  h2 {
+    color: red;
+    font-family: myriad-pro, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+  }
+  h1 {
+    font-family: myriad-pro, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+
+
+
+//Header Styles
+header {
+  position: relative;
+
+  .top-header-box {
+    background: #000;
+    padding: 16px 0;
+
+    .custom-menu {
+      text-align: right;
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+
+    li {
+      padding:  0 10px;
+      align-content: flex-end;
+      align-items: flex-end;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+    }
+  }
+  a {
+    color: #fff;
+    font-size: 16px;
+    font-family: myriad-pro, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+
+
+  .site-info {
+    padding: 6px 0;
+    background: rgba(0,0,0,0.6);
+    position: absolute;
+    left:0;
+    width: 100%;
+
+    .main-navigation {
+      height: 100%;
+
+      * {
+        height: 100%;
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+      }
+    }
+
+  }
+
+}
+
+
+//Banner Styles
+.banner {
+  padding: 173px 0  122px 0;
+
+  .banner-text {
+    background: rgba(0,0,0,0.6);
+    padding: 62px 67px 34px 22px;
+    display: inline-block;
+
+    p {
+      color: #fff;
+      font-size: 34px;
+      line-height: 34px;
+      margin-bottom: 30px;
+
+      strong {
+        color: $colorYellow;
+      }
+    }
+  }
+
+  .btn {
+    background: $colorYellow;
+    padding: 26px 24px;
+    color: #000;
+    font-size: 16px;
+    border-radius: 0;
+
+    span {
+      color: #000;
+      padding-left: 20px;
+    }
+  }
+
+}
+

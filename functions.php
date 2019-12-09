@@ -122,7 +122,12 @@ add_action( 'widgets_init', 'storm_widgets_init' );
 function storm_scripts() {
 	wp_enqueue_style( 'storm-style', get_stylesheet_uri() );
 
+
+//	wp_enqueue_style( 'foundation-style', get_stylesheet_directory_uri() . '/css/foundation.min.css', array(), '20151215', true );
+
 	wp_enqueue_script( 'storm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'storm-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -159,3 +164,87 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+add_action('acf/init', 'my_acf_init');
+function my_acf_init() {
+
+    // check function exists
+    if( function_exists('acf_register_block') ) {
+
+        // register a testimonial block
+        acf_register_block(array(
+            'name'				=> 'testimonial',
+            'title'				=> __('Testimonial'),
+            'description'		=> __('A custom testimonial block.'),
+            'render_callback'	=> 'my_acf_block_render_callback',
+            'category'			=> 'formatting',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'testimonial', 'quote' ),
+        ));
+
+        // register a footer block
+        acf_register_block(array(
+            'name'				=> 'footer',
+            'title'				=> __('Footer'),
+            'description'		=> __('A custom footer block.'),
+            'render_callback'	=> 'my_acf_block_render_callback',
+            'category'			=> 'formatting',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'footer', 'quote' ),
+        ));
+
+
+        // register a agenda block
+        acf_register_block(array(
+            'name'				=> 'banner',
+            'title'				=> __('Banner Home'),
+            'description'		=> __('A custom banner home block.'),
+            'render_callback'	=> 'my_acf_block_render_callback',
+            'category'			=> 'formatting',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'banner', 'quote' ),
+        ));
+
+
+
+
+    }
+}
+
+
+
+function my_acf_block_render_callback( $block ) {
+
+    // convert name ("acf/testimonial") into path friendly slug ("testimonial")
+    $slug = str_replace('acf/', '', $block['name']);
+
+    // include a template part from within the "template-parts/block" folder
+    if( file_exists( get_theme_file_path("/template-parts/block/content-{$slug}.php") ) ) {
+        include( get_theme_file_path("/template-parts/block/content-{$slug}.php") );
+    }
+}
+
+
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title' 	=> 'Theme General Settings',
+        'menu_title'	=> 'Theme Settings',
+        'menu_slug' 	=> 'theme-general-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Theme Header Settings',
+        'menu_title'	=> 'Header',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Theme Footer Settings',
+        'menu_title'	=> 'Footer',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
+
+}
