@@ -239,7 +239,7 @@ form .form-line-btn input {
   align-content: flex-end;
   align-items: flex-end;
 }
-/* line 200, sass/style.scss */
+/* line 199, sass/style.scss */
 form input, form select, form textarea {
   border: 0;
   background: #fff;
@@ -247,21 +247,28 @@ form input, form select, form textarea {
   margin-bottom: 24px;
   width: 100%;
 }
-/* line 207, sass/style.scss */
+/* line 206, sass/style.scss */
 form input:focus, form select:focus, form textarea:focus {
   border: none;
 }
-/* line 211, sass/style.scss */
+/* line 210, sass/style.scss */
 form select {
   color: #000;
   width: 100%;
+  background: white url("images/arrow-drop.png") no-repeat 98% center;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: "";
 }
-/* line 215, sass/style.scss */
+/* line 220, sass/style.scss */
 form textarea {
   margin-bottom: 14px;
   min-height: 175px;
+  resize: none;
 }
-/* line 219, sass/style.scss */
+/* line 225, sass/style.scss */
 form input::placeholder,
 form textarea::placeholder {
   color: #ababab;
@@ -269,7 +276,7 @@ form textarea::placeholder {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
 }
-/* line 226, sass/style.scss */
+/* line 232, sass/style.scss */
 form input[type=submit] {
   background: #fff;
   color: #db302c;
@@ -279,42 +286,42 @@ form input[type=submit] {
   width: auto;
 }
 
-/* line 242, sass/style.scss */
+/* line 248, sass/style.scss */
 footer .footer-aditional {
   background: #db302c;
   padding: 39px 0 30px 0;
 }
-/* line 246, sass/style.scss */
+/* line 252, sass/style.scss */
 footer .footer-aditional h4 {
   color: #fff;
   font-size: 32px;
   margin-bottom: 30px;
 }
-/* line 251, sass/style.scss */
+/* line 257, sass/style.scss */
 footer .footer-aditional .content {
   margin-bottom: 24px;
   color: #fff;
   font-family: myriad-pro, sans-serif;
   font-weight: normal;
 }
-/* line 259, sass/style.scss */
+/* line 265, sass/style.scss */
 footer .footer-line {
   background: #000;
   padding: 15px 0;
 }
-/* line 263, sass/style.scss */
+/* line 269, sass/style.scss */
 footer .footer-line p {
   color: #fff;
   font-size: 12px;
 }
-/* line 268, sass/style.scss */
+/* line 274, sass/style.scss */
 footer .footer-line a {
   text-decoration: underline;
   color: #fff;
   font-size: 12px;
   padding: 0 7px;
 }
-/* line 274, sass/style.scss */
+/* line 280, sass/style.scss */
 footer .footer-line a:hover {
   text-decoration: none;
 }
