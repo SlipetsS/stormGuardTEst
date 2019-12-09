@@ -171,29 +171,6 @@ function my_acf_init() {
     // check function exists
     if( function_exists('acf_register_block') ) {
 
-        // register a testimonial block
-        acf_register_block(array(
-            'name'				=> 'testimonial',
-            'title'				=> __('Testimonial'),
-            'description'		=> __('A custom testimonial block.'),
-            'render_callback'	=> 'my_acf_block_render_callback',
-            'category'			=> 'formatting',
-            'icon'				=> 'admin-comments',
-            'keywords'			=> array( 'testimonial', 'quote' ),
-        ));
-
-        // register a footer block
-        acf_register_block(array(
-            'name'				=> 'footer',
-            'title'				=> __('Footer'),
-            'description'		=> __('A custom footer block.'),
-            'render_callback'	=> 'my_acf_block_render_callback',
-            'category'			=> 'formatting',
-            'icon'				=> 'admin-comments',
-            'keywords'			=> array( 'footer', 'quote' ),
-        ));
-
-
         // register a agenda block
         acf_register_block(array(
             'name'				=> 'banner',
@@ -206,11 +183,8 @@ function my_acf_init() {
         ));
 
 
-
-
     }
 }
-
 
 
 function my_acf_block_render_callback( $block ) {
