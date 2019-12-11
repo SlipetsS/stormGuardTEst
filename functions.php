@@ -122,12 +122,11 @@ add_action( 'widgets_init', 'storm_widgets_init' );
 function storm_scripts() {
 	wp_enqueue_style( 'storm-style', get_stylesheet_uri() );
 
-
-//	wp_enqueue_style( 'foundation-style', get_stylesheet_directory_uri() . '/css/foundation.min.css', array(), '20151215', true );
+    wp_enqueue_style( 'styles-fonts', get_template_directory_uri() . '/fonts/fonts.css', array(), '20151215', true);
 
 	wp_enqueue_script( 'storm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.js', array(), '20151215', true );
+//	wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'storm-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -136,6 +135,8 @@ function storm_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'storm_scripts' );
+
+
 
 /**
  * Implement the Custom Header feature.
@@ -183,6 +184,18 @@ function my_acf_init() {
         ));
 
 
+        // register a agenda block
+        acf_register_block(array(
+            'name'				=> 'franchise find',
+            'title'				=> __('Franchise Find Home'),
+            'description'		=> __('A custom franchise find home block.'),
+            'render_callback'	=> 'my_acf_block_render_callback',
+            'category'			=> 'formatting',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'franchise-find', 'quote' ),
+        ));
+
+
     }
 }
 
@@ -216,9 +229,87 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
+        'page_title' 	=> 'Theme Default Settings',
+        'menu_title'	=> 'Default',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
         'page_title' 	=> 'Theme Footer Settings',
         'menu_title'	=> 'Footer',
         'parent_slug'	=> 'theme-general-settings',
     ));
 
+
 }
+
+
+function easytuts_projects_post() {
+    $labels = array(
+        'name'               => _x( 'Projects', 'post type general name' ),
+        'singular_name'      => _x( 'Project', 'post type singular name' ),
+        'add_new'            => _x( 'Add New', 'project' ),
+        'add_new_item'       => __( 'Add New Projects' ),
+        'edit_item'          => __( 'Edit Project' ),
+        'new_item'           => __( 'New Project' ),
+        'all_items'          => __( 'All Projects' ),
+        'view_item'          => __( 'View Project' ),
+        'search_items'       => __( 'Search Project' ),
+        'not_found'          => __( 'No game found' ),
+        'not_found_in_trash' => __( 'No game found in the Trash' ),
+        'parent_item_colon'  => '',
+        'menu_name'          => 'Projects'
+    );
+    $args = array(
+        'labels'        => $labels,
+        'description'   => 'Holds projects and game specific data',
+        'public'        => true,
+        'menu_position' => 5,
+        'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+        'has_archive'   => true,
+    );
+    register_post_type( 'projects', $args );
+}
+add_action( 'init', 'easytuts_projects_post' );
+
+
+
+
+function easytuts_services_post() {
+    $labels = array(
+        'name'               => _x( 'Services', 'post type general name' ),
+        'singular_name'      => _x( 'Service', 'post type singular name' ),
+        'add_new'            => _x( 'Add New', 'service' ),
+        'add_new_item'       => __( 'Add New Services' ),
+        'edit_item'          => __( 'Edit Service' ),
+        'new_item'           => __( 'New Service' ),
+        'all_items'          => __( 'All Services' ),
+        'view_item'          => __( 'View Service' ),
+        'search_items'       => __( 'Search Service' ),
+        'not_found'          => __( 'No service found' ),
+        'not_found_in_trash' => __( 'No service found in the Trash' ),
+        'parent_item_colon'  => '',
+        'menu_name'          => 'Services'
+    );
+    $args = array(
+        'labels'        => $labels,
+        'description'   => 'Holds services and service specific data',
+        'public'        => true,
+        'menu_position' => 5,
+        'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+        'has_archive'   => true,
+    );
+    register_post_type( 'services', $args );
+}
+add_action( 'init', 'easytuts_services_post' );
+
+
+//
+//if ( function_exists( 'add_theme_support' ) ) {
+//    add_theme_support( 'projects-thumbnails' );
+//    set_post_thumbnail_size( 125, 125, true ); // default Featured Image dimensions (cropped)
+//
+//    // additional image sizes
+//    // delete the next line if you do not need additional image sizes
+//    add_image_size( 'category-thumb', 300, 9999 ); // 300 pixels wide (and unlimited height)
+//}

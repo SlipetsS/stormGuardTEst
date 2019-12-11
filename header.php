@@ -87,3 +87,25 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+
+        <div class="banner-page">
+
+            <?php if( is_front_page() ){
+
+            }
+            else {
+
+
+            if ( has_post_thumbnail() ) :
+                the_post_thumbnail();
+
+            else:
+                 echo the_field('banner_image_default','option');
+            endif;
+
+            } ?>
+
+
+        </div>
+
+

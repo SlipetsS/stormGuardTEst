@@ -9,75 +9,396 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: custom-theme
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-
 Custom Theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
-
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
 @import "compass";
 @import "compass/reset";
 
 $colorYellow : #ffdd00;
+$colorRed: #db302c;
+$colorBlack: #000000;
+$font-family-sans-serif: "Helvetica Neue";
+$fontFamilyTitles: 'Eurostile-Demi';
+//
+//body {
+//  h2 {
+//    color: red;
+//    font-family: myriad-pro, sans-serif;
+//    font-style: normal;
+//    font-weight: 300;
+//  }
+//  h1 {
+//    font-family: myriad-pro, sans-serif;
+//    font-style: normal;
+//    font-weight: 400;
+//  }
+//}
 
-$font-family-sans-serif: "Helvetica Neue", Arial, sans-serif;
+ul {
+  margin: 0;
+  padding: 0;
+}
 
+.btn {
+  border-radius: 0;
+}
 
-body {
-  h2 {
-    color: red;
-    font-family: myriad-pro, sans-serif;
-    font-style: normal;
-    font-weight: 300;
+h3 {
+  color: $colorRed;
+  font-size: 32px;
+  margin-bottom: 7px;
+  font-family: $fontFamilyTitles;
+}
+
+h2 {
+  color: $colorBlack;
+  font-size: 38px;
+  font-family: $fontFamilyTitles;
+}
+
+h5 {
+  font-size: 20px;
+  font-family: $fontFamilyTitles;
+  color: $colorBlack;
+}
+
+h4 {
+  color: #fff;
+  font-size: 32px;
+  font-family: $fontFamilyTitles;
+  margin-bottom: 30px;
+}
+
+p {
+  color: $colorBlack;
+  font-family: $font-family-sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  margin-bottom: 25px;
+  a {
+    color: $colorRed;
   }
-  h1 {
+}
+
+header, footer {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+
+    li {
+      padding: 0 10px;
+      align-content: flex-end;
+      align-items: flex-end;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+    }
+  }
+
+  a {
+    color: #fff;
+    font-size: 16px;
     font-family: myriad-pro, sans-serif;
     font-style: normal;
     font-weight: 400;
+    text-decoration: none;
+    &:hover {
+      color: $colorRed;
+      text-decoration: none;
+    }
+  }
+}
+.current-menu-item {
+  a {
+    color: $colorRed;
   }
 }
 
 
-ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-  li {
-    padding:  0 10px;
-    align-content: flex-end;
-    align-items: flex-end;
+//Breadcrumbs
+.breadcrumbs {
+  border-bottom: 1px solid #d4d4d4;
+  padding: 20px 0;
+  margin-bottom: 28px;
 
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  .breadcrumb-container {
+    padding: 0;
+    margin: 0;
+  }
+  .breadcrumb-container.theme1  {
+
+    ul {
+      justify-content: flex-start;
+
+      li {
+        position: relative;
+        align-content: flex-start;
+        align-items: flex-start;
+        padding:  0 11px;
+
+        span {
+          text-decoration: underline;
+          color: $colorRed!important;
+        }
+
+        .separator {
+          display: none;
+        }
+
+        a {
+          font-size: 14px;
+          font-family: $font-family-sans-serif;
+
+          &:hover {
+            text-decoration: none;
+          }
+
+        }
+
+        &:after {
+          content: ">";
+          position: absolute;
+          right: -5px;
+          top: 20%;
+          color: $colorBlack;
+          font-size: 14px;
+          font-family: $font-family-sans-serif;
+
+        }
+        &:last-child:after {
+          display: none;
+        }
+        &:first-child {
+          padding-left: 0;
+        }
+
+        span {
+          font-size: 14px;
+          font-family: $font-family-sans-serif;
+          color: $colorBlack;
+        }
+      }
+
+    }
+  }
+
+
+}
+
+
+//Content Page
+.content {
+  img {
+    float: right;
+    margin-left: 20px;
+  }
+}
+
+.content-page {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #d4d4d4;
+  margin-bottom: 35px;
+
+  img {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+.post-thumbnail {
+   img {
+     width: 100%;
+   }
+}
+
+//Franchise Box
+.franchise-box, .franchise-box-find {
+  background-color: $colorYellow;
+  padding: 30px 0;
+
+  p {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+
+  .franchise-box__right {
+    display: flex;
+    justify-content: flex-end;
+
+    .btn {
+      color: #fff;
+      text-transform: capitalize;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: $colorRed;
+      padding: 15px 37px;
     }
 
   }
-}
-a {
-  color: #fff;
-  font-size: 16px;
-  font-family: myriad-pro, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  text-decoration: none;
 
-  &:hover {
-    color: #fff;
+}
+
+
+//Our Services
+
+.content-info {
+  max-width: 440px;
+  margin:  0 auto 40px auto;
+  text-align: center;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.our-services {
+  text-align: center;
+  border-bottom: 1px solid #d4d4d4;
+  margin-bottom: 35px;
+  padding-bottom: 30px;
+
+  h5 {
+    margin-bottom: 12px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .service-one {
+    margin-bottom: 30px;
+
+    img {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+
+//Started box
+.started-box {
+  margin-bottom: 23px;
+
+  .started-box-one {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+    .started-box-one_link {
+      background: $colorYellow;
+      padding: 15px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      box-sizing: border-box;
+
+      a {
+        color: $colorBlack;
+        font-family: $fontFamilyTitles;
+        position: relative;
+
+        &:after {
+          content: ">";
+          position: absolute;
+          right: -25px;
+          top: 15%;
+          color: $colorBlack;
+          font-size: 14px;
+          font-family: $fontFamilyTitles;
+
+        }
+      }
+    }
   }
 }
 
 
 
+//Franchise FIND Box
+.franchise-box-find {
+  p {
+    margin-bottom: 0;
+    font-weight: bold;
+  }
 
+  .franchise-box__left_find {
+    position: relative;
+    padding-left: 43px;
+    margin-left: 43px;
+
+    &:before {
+      background: url("./images/map-icon.png") no-repeat left top;
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 56px;
+      width: 38px;
+      display: block;
+
+    }
+  }
+
+  .franchise-box__right_form {
+    margin-right: 43px;
+
+    form {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+
+      * {
+        display: flex;
+      }
+      .wpcf7-display-none {
+        display: none;
+      }
+
+      .wpcf7-form-control-wrap {
+        width: 65%;
+      }
+
+      .ajax-loader {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+      }
+
+      input[type=text]{
+        margin-right: 20px;
+        border: 1px solid #b7b7b7;
+        padding: 17px 13px;
+        margin-bottom: 0;
+      }
+
+      input[type=submit] {
+        background-color: $colorRed;
+        padding: 16px 30px;
+        color: #fff;
+        width: 35%;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
 
 
 //Header Styles
@@ -90,6 +411,11 @@ header {
 
     .custom-menu {
       text-align: right;
+    }
+    .custom-line {
+      a {
+        color: $colorYellow;
+      }
     }
   }
 
@@ -120,6 +446,13 @@ header {
 
 
 //Banner Styles
+
+.banner-page {
+  img {
+    width: 100%;
+  }
+}
+
 .banner {
   padding: 163px 0  112px 0;
   background-size: cover;
@@ -134,6 +467,7 @@ header {
       font-size: 34px;
       line-height: 34px;
       margin-bottom: 30px;
+      font-family: $fontFamilyTitles;
 
       strong {
         color: $colorYellow;
@@ -157,6 +491,8 @@ header {
   }
 
 }
+
+
 //Form Styles
 form {
 
@@ -178,7 +514,6 @@ form {
 
   }
 
-
   .form-line-btn {
     display: flex;
     justify-content: flex-end;
@@ -199,9 +534,10 @@ form {
   input, select, textarea {
     border: 0;
     background: #fff;
-    padding: 14px 10px;
+    padding: 14px 13px;
     margin-bottom: 24px;
     width: 100%;
+    font-family: $fontFamilyTitles;
 
     &:focus {
       border: none;
@@ -245,23 +581,84 @@ form {
 
 //Footer Styles
 footer {
+  border-top: 5px solid #fff;
+
   .footer-aditional {
     background: #db302c;
     padding: 39px 0 30px 0;
+    border-top: 5px solid #fff;
 
-    h4 {
-      color: #fff;
-      font-size: 32px;
-      margin-bottom: 30px;
+    .footer-contact  {
+      padding-right: 20px;
     }
-    .content {
+
+    p {
       margin-bottom: 24px;
       color: #fff;
       font-family: myriad-pro, sans-serif;
       font-weight: normal;
     }
 
+    .footer-projects {
+      position: relative;
+      padding-left: 20px;
+
+      &:before {
+        content: "";
+        height: 100%;
+        border-left: 1px solid #e6534f;
+        width: 2px;
+        background: #bb2723;
+        position: absolute;
+        left: -15px;
+        top: 0;
+        display: block;
+      }
+
+      img {
+        border: 1px solid #fff;
+        margin: 0 0 20px 0;
+      }
+
+
+      p {
+        a {
+          color: #fff;
+          text-decoration: underline;
+          &:hover {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+      }
+
+      .form-line-btn {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        .btn-white {
+          background: #fff;
+          color: #db302c;
+          font-family: $font-family-sans-serif;
+          font-weight: bold;
+          padding: 25px 35px;
+          display: flex;
+          align-items: baseline;
+          align-self: center;
+
+          &:hover {
+            text-decoration: none;
+          }
+
+        }
+
+      }
+
+    }
+
   }
+
   .footer-line {
     background: #000;
     padding: 15px 0;
@@ -269,6 +666,7 @@ footer {
     p {
       color: #fff;
       font-size: 12px;
+      margin-bottom: 0;
     }
 
     a {
@@ -287,4 +685,3 @@ footer {
 
 
 }
-

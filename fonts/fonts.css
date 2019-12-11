@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Eurostile-Demi';
+  src: url('Eurostile-Demi.eot?#iefix') format('embedded-opentype'),  url('Eurostile-Demi.otf')  format('opentype'),
+	     url('Eurostile-Demi.woff') format('woff'), url('Eurostile-Demi.ttf')  format('truetype'), url('Eurostile-Demi.svg#Eurostile-Demi') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
