@@ -172,7 +172,7 @@ function my_acf_init() {
     // check function exists
     if( function_exists('acf_register_block') ) {
 
-        // register a agenda block
+
         acf_register_block(array(
             'name'				=> 'banner',
             'title'				=> __('Banner Home'),
@@ -184,7 +184,6 @@ function my_acf_init() {
         ));
 
 
-        // register a agenda block
         acf_register_block(array(
             'name'				=> 'franchise find',
             'title'				=> __('Franchise Find Home'),
@@ -193,6 +192,16 @@ function my_acf_init() {
             'category'			=> 'formatting',
             'icon'				=> 'admin-comments',
             'keywords'			=> array( 'franchise-find', 'quote' ),
+        ));
+
+        acf_register_block(array(
+            'name'				=> 'get started',
+            'title'				=> __('Get Started Home'),
+            'description'		=> __('A custom Get Started block.'),
+            'render_callback'	=> 'my_acf_block_render_callback',
+            'category'			=> 'formatting',
+            'icon'				=> 'admin-comments',
+            'keywords'			=> array( 'get-started', 'quote' ),
         ));
 
 
