@@ -105,10 +105,10 @@
 
             } ?>
 
-            <?php
-            if ( is_single() ) { ?>
-                <img src="<?php echo the_field('banner_image_default','option'); ?>" alt=""/>
-          <?php  } ?>
+<!--            --><?php
+//            if ( is_single() ) { ?>
+<!--                <img src="--><?php //echo the_field('banner_image_default','option'); ?><!--" alt=""/>-->
+<!--          --><?php // } ?>
 
         </div>
         <!--Banner Block End-->

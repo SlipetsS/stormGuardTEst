@@ -280,6 +280,12 @@ if( function_exists('acf_add_options_page') ) {
         'menu_title'	=> 'Testimonials',
         'parent_slug'	=> 'theme-general-settings',
     ));
+
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Theme Service Info Settings',
+        'menu_title'	=> 'Service Info',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
 }
 
 // Post Type Projects
@@ -315,7 +321,7 @@ add_action( 'init', 'easytuts_projects_post' );
 // Post Type Services
 function easytuts_services_post() {
     $labels = array(
-        'name'               => _x( 'Services', 'post type general name' ),
+        'name'               => _x( 'Residential', 'post type general name' ),
         'singular_name'      => _x( 'Service', 'post type singular name' ),
         'add_new'            => _x( 'Add New', 'service' ),
         'add_new_item'       => __( 'Add New Services' ),
@@ -340,6 +346,35 @@ function easytuts_services_post() {
     register_post_type( 'services', $args );
 }
 add_action( 'init', 'easytuts_services_post' );
+
+
+
+
+function my_taxonomies_services() {
+    $labels = array(
+        'name'              => _x( 'Service Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Service Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Service Categories' ),
+        'all_items'         => __( 'All Service Categories' ),
+        'parent_item'       => __( 'Parent Service Category' ),
+        'parent_item_colon' => __( 'Parent Service Category:' ),
+        'edit_item'         => __( 'Edit Service Category' ),
+        'update_item'       => __( 'Update Service Category' ),
+        'add_new_item'      => __( 'Add New Service Category' ),
+        'new_item_name'     => __( 'New Service Category' ),
+        'menu_name'         => __( 'Services Categories' ),
+    );
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => true,
+    );
+    register_taxonomy( 'services_category', 'services', $args );
+}
+add_action( 'init', 'my_taxonomies_services', 0 );
+
+
+
+
 
 // Post Type Testimonials
 function easytuts_testimonials_post() {

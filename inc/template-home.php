@@ -65,29 +65,62 @@ get_header(); ?>
                     <p><?php echo the_field('services_box_content'); ?> </p>
                 </div>
             </div>
+
             <?php
-            $post_args = array( 'post_type' => 'services','order' => 'ASC', 'posts_per_page' => 8 );
-            $post_query = new WP_Query( $post_args );
+            $args = array(
+                'taxonomy' => 'services_category',
+                'parent'        => 0,
+                'orderby'       => 'name',
+                'order'         => 'ASC',
+                'hierarchical'  => 1,
+                'hide_empty'    => 1,
+                'pad_counts'    =>0
+            );
 
-            if ( $post_query->have_posts() ) :
-                while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
+            $categories = get_categories( $args );
 
+            foreach ( $categories as $category ){
+
+
+                $sub_args = array(
+                    'taxonomy' => 'services_category',
+                    'parent'        => $category->term_id,
+                    'orderby'       => 'name',
+                    'order'         => 'ASC',
+                    'hierarchical'  => 1,
+                    'hide_empty'    => 0,
+                    'pad_counts'    => 0
+                );
+
+                $sub_categories = get_categories( $sub_args ); ?>
+
+                <?php foreach ( $sub_categories as $sub_category ){ ?>
                     <div class="col-sm col-lg-4">
                         <div class="service-one">
-                          <a href="<?php echo get_permalink(); ?>"><?php  if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?></a>
-                            <h5><?php echo the_title(); ?></h5>
-                            <p><?php echo the_content(); ?></p>
+
+                            <?php
+                            $term = get_term_by('slug', $sub_category->slug, 'services_category');
+                            $image = get_field('icon_category', $term);
+                            $current_term = get_term_by( 'slug', $sub_category->slug , 'services_category' );
+                            ?>
+
+                            <?php if( $image ): ?>
+                                <a href="<?php echo get_term_link($term->slug, 'services_category')?>"><img src="<?php echo $image; ?>" alt=""/></a>
+                            <?php endif; ?>
+
+                            <?php echo '<h5>'. $sub_category->name . '</h5>';?>
+                            <p><?php
+                                echo $current_term->description; ?>
+                            </p>
                         </div>
                     </div>
 
+                <?php
+                }
 
-                    <?php wp_reset_postdata(); ?>
+            } ?>
 
-                <?php endwhile; // ending while loop ?>
-            <?php else:  ?>
 
-                <p><?php _e( 'Sorry, no game matched your criteria.' ); ?></p>
-            <?php endif; // ending condition ?>
             <div class="col-sm col-lg-12">
                 <div class="btns-box">
                     <a class="btn-yellow" href="<?php echo get_post_type_archive_link( 'services' ); ?>">View All Services</a>

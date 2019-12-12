@@ -370,39 +370,45 @@ div.wpcf7-response-output {
 }
 
 /* line 321, sass/style.scss */
+.alignleft {
+  float: left;
+  margin-right: 20px;
+}
+
+/* line 325, sass/style.scss */
 .our-services {
   text-align: center;
   padding-top: 35px;
   position: relative;
 }
-/* line 327, sass/style.scss */
+/* line 331, sass/style.scss */
 .our-services h5 {
   margin-bottom: 12px;
 }
-/* line 331, sass/style.scss */
+/* line 335, sass/style.scss */
 .our-services p {
   margin-bottom: 0;
 }
-/* line 335, sass/style.scss */
+/* line 339, sass/style.scss */
 .our-services .service-one {
   margin-bottom: 30px;
 }
-/* line 338, sass/style.scss */
+/* line 342, sass/style.scss */
 .our-services .service-one img {
   margin-bottom: 6px;
 }
 
-/* line 346, sass/style.scss */
+/* line 350, sass/style.scss */
 .testimonials {
   background: #f7f8f8;
   padding: 53px 0;
 }
-/* line 350, sass/style.scss */
+/* line 354, sass/style.scss */
 .testimonials h3 {
   margin-bottom: 40px;
   text-align: center;
 }
-/* line 355, sass/style.scss */
+/* line 359, sass/style.scss */
 .testimonials .testimonials-one span {
   text-align: right;
   font-size: 14px;
@@ -411,13 +417,13 @@ div.wpcf7-response-output {
   display: block;
   margin-bottom: 7px;
 }
-/* line 364, sass/style.scss */
+/* line 368, sass/style.scss */
 .testimonials .testimonials-one_content {
   background: #fff;
   padding: 25px 13px;
   margin-bottom: 10px;
 }
-/* line 370, sass/style.scss */
+/* line 374, sass/style.scss */
 .testimonials p {
   color: #000000;
   font-size: 20px;
@@ -425,27 +431,27 @@ div.wpcf7-response-output {
   font-style: oblique;
 }
 
-/* line 381, sass/style.scss */
+/* line 385, sass/style.scss */
 .latest-posts {
   padding: 35px 0 0 0;
 }
-/* line 384, sass/style.scss */
+/* line 388, sass/style.scss */
 .latest-posts h3 {
   margin-bottom: 28px;
   text-align: center;
 }
-/* line 389, sass/style.scss */
+/* line 393, sass/style.scss */
 .latest-posts .latest-posts_one {
   border: 1px solid #e1e1e1;
   margin-bottom: 20px;
   position: relative;
 }
-/* line 394, sass/style.scss */
+/* line 398, sass/style.scss */
 .latest-posts .latest-posts_one p {
   line-height: 26px;
   margin-bottom: 0;
 }
-/* line 399, sass/style.scss */
+/* line 403, sass/style.scss */
 .latest-posts .latest-posts_one .date {
   position: absolute;
   left: 0;
@@ -453,18 +459,18 @@ div.wpcf7-response-output {
   padding: 10px;
   background: #ffdd00;
 }
-/* line 406, sass/style.scss */
+/* line 410, sass/style.scss */
 .latest-posts .latest-posts_one .date span {
   color: #000000;
   display: block;
   text-align: center;
 }
-/* line 412, sass/style.scss */
+/* line 416, sass/style.scss */
 .latest-posts .latest-posts_one .date .day {
   font-weight: bold;
   padding-top: 4px;
 }
-/* line 418, sass/style.scss */
+/* line 422, sass/style.scss */
 .latest-posts .latest-posts_one .author {
   padding: 15px;
   border-top: 1px solid #e1e1e1;
@@ -473,15 +479,15 @@ div.wpcf7-response-output {
   font-size: 14px;
   text-transform: uppercase;
 }
-/* line 427, sass/style.scss */
+/* line 431, sass/style.scss */
 .latest-posts .latest-posts_one img {
   width: 100%;
 }
-/* line 431, sass/style.scss */
+/* line 435, sass/style.scss */
 .latest-posts .latest-posts_one .latest-posts_text {
   padding: 15px 15px 20px 15px;
 }
-/* line 434, sass/style.scss */
+/* line 438, sass/style.scss */
 .latest-posts .latest-posts_one .latest-posts_text h6 {
   font-size: 26px;
   font-family: "Eurostile-Demi";
@@ -489,32 +495,32 @@ div.wpcf7-response-output {
   margin-bottom: 12px;
   width: 60%;
 }
-/* line 443, sass/style.scss */
+/* line 447, sass/style.scss */
 .latest-posts .latest-posts_one .latest-posts_text p a {
   color: #db302c;
   font-size: 16px;
   text-decoration: underline;
 }
-/* line 448, sass/style.scss */
+/* line 452, sass/style.scss */
 .latest-posts .latest-posts_one .latest-posts_text p a:hover {
   text-decoration: none;
 }
 
-/* line 463, sass/style.scss */
+/* line 467, sass/style.scss */
 .started-box {
   margin-bottom: 35px;
   padding-top: 35px;
   border-top: 1px solid #d4d4d4;
 }
-/* line 468, sass/style.scss */
+/* line 472, sass/style.scss */
 .started-box .started-box-one {
   position: relative;
 }
-/* line 471, sass/style.scss */
+/* line 475, sass/style.scss */
 .started-box .started-box-one img {
   width: 100%;
 }
-/* line 474, sass/style.scss */
+/* line 478, sass/style.scss */
 .started-box .started-box-one .started-box-one_link {
   background: #ffdd00;
   padding: 15px;
@@ -524,13 +530,13 @@ div.wpcf7-response-output {
   width: 100%;
   box-sizing: border-box;
 }
-/* line 483, sass/style.scss */
+/* line 487, sass/style.scss */
 .started-box .started-box-one .started-box-one_link a {
   color: #000000;
   font-family: "Eurostile-Demi";
   position: relative;
 }
-/* line 488, sass/style.scss */
+/* line 492, sass/style.scss */
 .started-box .started-box-one .started-box-one_link a:after {
   content: ">";
   position: absolute;
@@ -541,18 +547,18 @@ div.wpcf7-response-output {
   font-family: "Eurostile-Demi";
 }
 
-/* line 507, sass/style.scss */
+/* line 511, sass/style.scss */
 .franchise-box-find p {
   margin-bottom: 0;
   font-weight: bold;
 }
-/* line 512, sass/style.scss */
+/* line 516, sass/style.scss */
 .franchise-box-find .franchise-box__left_find {
   position: relative;
   padding-left: 63px;
   margin-left: 43px;
 }
-/* line 517, sass/style.scss */
+/* line 521, sass/style.scss */
 .franchise-box-find .franchise-box__left_find:before {
   background: url("./images/map-icon.png") no-repeat left top;
   content: " ";
@@ -563,41 +569,41 @@ div.wpcf7-response-output {
   width: 38px;
   display: block;
 }
-/* line 530, sass/style.scss */
+/* line 534, sass/style.scss */
 .franchise-box-find .franchise-box__right_form {
   margin-right: 43px;
 }
-/* line 533, sass/style.scss */
+/* line 537, sass/style.scss */
 .franchise-box-find .franchise-box__right_form .btn {
   display: flex;
 }
-/* line 537, sass/style.scss */
+/* line 541, sass/style.scss */
 .franchise-box-find .franchise-box__right_form .btn, .franchise-box-find .franchise-box__right_form input[type=submit] {
   background-color: #db302c;
   padding: 16px 30px;
   color: #fff;
   margin-bottom: 0;
 }
-/* line 544, sass/style.scss */
+/* line 548, sass/style.scss */
 .franchise-box-find .franchise-box__right_form form {
   display: flex;
   flex-direction: row;
   position: relative;
 }
-/* line 549, sass/style.scss */
+/* line 553, sass/style.scss */
 .franchise-box-find .franchise-box__right_form form * {
   display: flex;
 }
-/* line 552, sass/style.scss */
+/* line 556, sass/style.scss */
 .franchise-box-find .franchise-box__right_form form .wpcf7-display-none {
   display: none;
 }
-/* line 556, sass/style.scss */
+/* line 560, sass/style.scss */
 .franchise-box-find .franchise-box__right_form form span.wpcf7-not-valid-tip {
   position: absolute;
   bottom: -25px;
 }
-/* line 561, sass/style.scss */
+/* line 565, sass/style.scss */
 .franchise-box-find .franchise-box__right_form form div.wpcf7-response-output {
   position: absolute;
   top: -49px;
@@ -605,47 +611,47 @@ div.wpcf7-response-output {
   margin: 0;
   background: #fff;
 }
-/* line 569, sass/style.scss */
+/* line 573, sass/style.scss */
 .franchise-box-find .franchise-box__right_form form .wpcf7-form-control-wrap {
   width: 65%;
   display: flex;
 }
-/* line 574, sass/style.scss */
+/* line 578, sass/style.scss */
 .franchise-box-find .franchise-box__right_form form .ajax-loader {
   position: absolute;
   left: 50%;
   bottom: 0;
 }
-/* line 580, sass/style.scss */
+/* line 584, sass/style.scss */
 .franchise-box-find .franchise-box__right_form form input[type=text] {
   margin-right: 20px;
   border: 1px solid #b7b7b7;
   padding: 17px 13px;
   margin-bottom: 0;
 }
-/* line 586, sass/style.scss */
+/* line 590, sass/style.scss */
 .franchise-box-find .franchise-box__right_form form input[type=submit] {
   width: 35%;
 }
 
-/* line 596, sass/style.scss */
+/* line 600, sass/style.scss */
 header {
   position: relative;
 }
-/* line 599, sass/style.scss */
+/* line 603, sass/style.scss */
 header .top-header-box {
   background: #000;
   padding: 16px 0;
 }
-/* line 603, sass/style.scss */
+/* line 607, sass/style.scss */
 header .top-header-box .custom-menu {
   text-align: right;
 }
-/* line 607, sass/style.scss */
+/* line 611, sass/style.scss */
 header .top-header-box .custom-line a {
   color: #ffdd00;
 }
-/* line 613, sass/style.scss */
+/* line 617, sass/style.scss */
 header .site-info {
   padding: 6px 0;
   background: rgba(0, 0, 0, 0.6);
@@ -653,38 +659,38 @@ header .site-info {
   left: 0;
   width: 100%;
 }
-/* line 620, sass/style.scss */
+/* line 624, sass/style.scss */
 header .site-info .main-navigation {
   height: 100%;
 }
-/* line 623, sass/style.scss */
+/* line 627, sass/style.scss */
 header .site-info .main-navigation * {
   height: 100%;
 }
-/* line 627, sass/style.scss */
+/* line 631, sass/style.scss */
 header .site-info .main-navigation .menu {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-/* line 642, sass/style.scss */
+/* line 646, sass/style.scss */
 .banner-page img {
   width: 100%;
 }
 
-/* line 647, sass/style.scss */
+/* line 651, sass/style.scss */
 .banner {
   padding: 163px 0  112px 0;
   background-size: cover;
 }
-/* line 651, sass/style.scss */
+/* line 655, sass/style.scss */
 .banner .banner-text {
   background: rgba(0, 0, 0, 0.6);
   padding: 62px 67px 34px 22px;
   display: inline-block;
 }
-/* line 656, sass/style.scss */
+/* line 660, sass/style.scss */
 .banner .banner-text p {
   color: #fff;
   font-size: 34px;
@@ -692,11 +698,11 @@ header .site-info .main-navigation .menu {
   margin-bottom: 30px;
   font-family: "Eurostile-Demi";
 }
-/* line 663, sass/style.scss */
+/* line 667, sass/style.scss */
 .banner .banner-text p strong {
   color: #ffdd00;
 }
-/* line 669, sass/style.scss */
+/* line 673, sass/style.scss */
 .banner .btn {
   background: #ffdd00;
   padding: 26px 24px;
@@ -706,46 +712,46 @@ header .site-info .main-navigation .menu {
   font-family: "Helvetica";
   font-weight: bold;
 }
-/* line 678, sass/style.scss */
+/* line 682, sass/style.scss */
 .banner .btn span {
   color: #000;
   padding-left: 20px;
 }
 
-/* line 690, sass/style.scss */
+/* line 694, sass/style.scss */
 form .form-line {
   display: flex;
   flex-direction: row;
 }
-/* line 694, sass/style.scss */
+/* line 698, sass/style.scss */
 form .form-line .wpcf7-form-control-wrap {
   flex: 50%;
   display: flex;
   flex-direction: row;
   margin-left: 24px;
 }
-/* line 700, sass/style.scss */
+/* line 704, sass/style.scss */
 form .form-line .wpcf7-form-control-wrap:first-child {
   margin-left: 0;
 }
-/* line 708, sass/style.scss */
+/* line 712, sass/style.scss */
 form .form-line-btn {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
 }
-/* line 713, sass/style.scss */
+/* line 717, sass/style.scss */
 form .form-line-btn .ajax-loader {
   position: absolute;
   bottom: 0;
   right: 50%;
 }
-/* line 719, sass/style.scss */
+/* line 723, sass/style.scss */
 form .form-line-btn input {
   align-content: flex-end;
   align-items: flex-end;
 }
-/* line 725, sass/style.scss */
+/* line 729, sass/style.scss */
 form input, form select, form textarea {
   border: 0;
   background: #fff;
@@ -754,11 +760,11 @@ form input, form select, form textarea {
   width: 100%;
   font-family: "Eurostile-Demi";
 }
-/* line 733, sass/style.scss */
+/* line 737, sass/style.scss */
 form input:focus, form select:focus, form textarea:focus {
   border: none;
 }
-/* line 737, sass/style.scss */
+/* line 741, sass/style.scss */
 form select {
   color: #000;
   width: 100%;
@@ -769,13 +775,13 @@ form select {
   text-indent: 0.01px;
   text-overflow: "";
 }
-/* line 747, sass/style.scss */
+/* line 751, sass/style.scss */
 form textarea {
   margin-bottom: 14px;
   min-height: 175px;
   resize: none;
 }
-/* line 752, sass/style.scss */
+/* line 756, sass/style.scss */
 form input::placeholder,
 form textarea::placeholder {
   color: #ababab;
@@ -783,7 +789,7 @@ form textarea::placeholder {
   font-family: "Helvetica";
   font-size: 16px;
 }
-/* line 759, sass/style.scss */
+/* line 763, sass/style.scss */
 form input[type=submit] {
   background: #fff;
   color: #db302c;
@@ -793,33 +799,33 @@ form input[type=submit] {
   width: auto;
 }
 
-/* line 775, sass/style.scss */
+/* line 779, sass/style.scss */
 .footer-aditional {
   background: #db302c;
   padding: 39px 0 30px 0;
   border-top: 5px solid #fff;
 }
-/* line 780, sass/style.scss */
+/* line 784, sass/style.scss */
 .footer-aditional h4 {
   margin-bottom: 25px;
 }
-/* line 784, sass/style.scss */
+/* line 788, sass/style.scss */
 .footer-aditional .footer-contact {
   padding-right: 20px;
 }
-/* line 788, sass/style.scss */
+/* line 792, sass/style.scss */
 .footer-aditional p {
   margin-bottom: 24px;
   color: #fff;
   font-family: myriad-pro, sans-serif;
   font-weight: normal;
 }
-/* line 795, sass/style.scss */
+/* line 799, sass/style.scss */
 .footer-aditional .footer-projects {
   position: relative;
   padding-left: 20px;
 }
-/* line 799, sass/style.scss */
+/* line 803, sass/style.scss */
 .footer-aditional .footer-projects:before {
   content: "";
   height: 100%;
@@ -831,30 +837,30 @@ form input[type=submit] {
   top: 0;
   display: block;
 }
-/* line 811, sass/style.scss */
+/* line 815, sass/style.scss */
 .footer-aditional .footer-projects img {
   border: 1px solid #fff;
   width: 100%;
   height: auto;
   margin: 0 0 26px 0;
 }
-/* line 819, sass/style.scss */
+/* line 823, sass/style.scss */
 .footer-aditional .footer-projects p a {
   color: #fff;
   text-decoration: underline;
 }
-/* line 822, sass/style.scss */
+/* line 826, sass/style.scss */
 .footer-aditional .footer-projects p a:hover {
   text-decoration: none;
   color: #fff;
 }
-/* line 830, sass/style.scss */
+/* line 834, sass/style.scss */
 .footer-aditional .footer-projects .form-line-btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-/* line 835, sass/style.scss */
+/* line 839, sass/style.scss */
 .footer-aditional .footer-projects .form-line-btn .btn-white {
   background: #fff;
   color: #db302c;
@@ -865,11 +871,11 @@ form input[type=submit] {
   align-items: baseline;
   align-self: center;
 }
-/* line 845, sass/style.scss */
+/* line 849, sass/style.scss */
 .footer-aditional .footer-projects .form-line-btn .btn-white:hover {
   text-decoration: none;
 }
-/* line 856, sass/style.scss */
+/* line 860, sass/style.scss */
 .footer-aditional .btns-box .btn-white {
   max-width: 388px;
   margin-bottom: 35px;
@@ -882,45 +888,45 @@ form input[type=submit] {
   align-items: baseline;
   align-self: center;
 }
-/* line 868, sass/style.scss */
+/* line 872, sass/style.scss */
 .footer-aditional .btns-box .btn-white:hover {
   text-decoration: none;
 }
 
-/* line 878, sass/style.scss */
+/* line 882, sass/style.scss */
 .main-footer.footer-aditional .footer-projects:before {
   display: none;
 }
 
-/* line 886, sass/style.scss */
+/* line 890, sass/style.scss */
 footer .footer-line {
   background: #000;
   padding: 15px 0;
 }
-/* line 890, sass/style.scss */
+/* line 894, sass/style.scss */
 footer .footer-line p {
   color: #fff;
   font-size: 12px;
   margin-bottom: 0;
 }
-/* line 896, sass/style.scss */
+/* line 900, sass/style.scss */
 footer .footer-line a {
   text-decoration: underline;
   color: #fff;
   font-size: 12px;
   padding: 0 7px;
 }
-/* line 902, sass/style.scss */
+/* line 906, sass/style.scss */
 footer .footer-line a:hover {
   text-decoration: none;
 }
 
-/* line 914, sass/style.scss */
+/* line 918, sass/style.scss */
 .slick-dots li {
   width: 16px;
   height: 16px;
 }
-/* line 918, sass/style.scss */
+/* line 922, sass/style.scss */
 .slick-dots li button {
   background: #d8d8d8;
   border-radius: 92px;
@@ -928,7 +934,7 @@ footer .footer-line a:hover {
   width: 15px;
   height: 15px;
 }
-/* line 925, sass/style.scss */
+/* line 929, sass/style.scss */
 .slick-dots li button:before {
   font-size: 46px;
   line-height: 15px;
@@ -937,29 +943,29 @@ footer .footer-line a:hover {
   color: #fff;
   opacity: 1;
 }
-/* line 936, sass/style.scss */
+/* line 940, sass/style.scss */
 .slick-dots .slick-active button {
   background: #000;
 }
-/* line 939, sass/style.scss */
+/* line 943, sass/style.scss */
 .slick-dots .slick-active button:before {
   color: #000;
   opacity: 1;
 }
 
-/* line 950, sass/style.scss */
+/* line 954, sass/style.scss */
 .site {
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
 
-/* line 955, sass/style.scss */
+/* line 959, sass/style.scss */
 .site-content {
   flex: 1 0 auto;
 }
 
-/* line 958, sass/style.scss */
+/* line 962, sass/style.scss */
 .site-footer {
   flex: 0 0 auto;
 }

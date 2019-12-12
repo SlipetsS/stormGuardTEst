@@ -11,7 +11,7 @@ get_header();
 ?>
 
     <div class="container">
-        <div class="row our-services">
+        <div class="row">
             <div class="col-sm col-lg-12">
 
                 <section id="primary" class="content-area">

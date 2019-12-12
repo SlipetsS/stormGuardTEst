@@ -1,15 +1,17 @@
 <?php
 /**
- * The template for displaying archive projects pages
+ * The template for displaying category archive pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package storm
+ * @package WordPress
+ * @subpackage Twenty_Seventeen
+ * @since 1.0
+ * @version 1.0
  */
 
-get_header();
-?>
-    <div class="container">
+get_header(); ?>
+<div class="container">
         <div class="row our-services">
             <div class="col-sm col-lg-12">
                 <div id="primary" class="content-area">
@@ -17,12 +19,7 @@ get_header();
 
                         <?php if (have_posts()) : ?>
 
-                            <header class="page-header">
-                                <?php
-                                the_archive_title('<h1 class="page-title">', '</h1>');
-                                the_archive_description('<div class="archive-description">', '</div>');
-                                ?>
-                            </header><!-- .page-header -->
+
 
                             <?php
                             /* Start the Loop */
@@ -57,3 +54,4 @@ get_header();
 <?php
 get_sidebar();
 get_footer();
+
