@@ -29,7 +29,9 @@ get_header(); ?>
 
     <div class="container">
         <div class="row our-services">
+            <div class="line"></div>
             <div class="col-sm col-lg-12">
+
                 <div class="content-info">
                     <h3><?php echo the_field('services_box_title'); ?></h3>
                     <p><?php echo the_field('services_box_content'); ?> </p>
