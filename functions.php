@@ -196,17 +196,6 @@ function my_acf_init() {
             'keywords'			=> array( 'banner', 'quote' ),
         ));
 
-
-        acf_register_block(array(
-            'name'				=> 'franchise find',
-            'title'				=> __('Franchise Find Home'),
-            'description'		=> __('A custom franchise find home block.'),
-            'render_callback'	=> 'my_acf_block_render_callback',
-            'category'			=> 'formatting',
-            'icon'				=> 'admin-comments',
-            'keywords'			=> array( 'franchise-find', 'quote' ),
-        ));
-
         acf_register_block(array(
             'name'				=> 'get started',
             'title'				=> __('Get Started'),

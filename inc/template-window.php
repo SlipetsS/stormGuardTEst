@@ -35,6 +35,7 @@ get_header(); ?>
                     <p><?php echo the_field('services_box_content'); ?> </p>
                 </div>
             </div>
+
             <?php
             $post_args = array( 'post_type' => 'services','order' => 'ASC', 'posts_per_page' => 8 );
             $post_query = new WP_Query( $post_args );
@@ -57,6 +58,9 @@ get_header(); ?>
 
                 <p><?php _e( 'Sorry, no game matched your criteria.' ); ?></p>
             <?php endif; // ending condition ?>
+            <div class="col-sm col-lg-12">
+                <div class="padd-30"></div>
+            </div>
         </div>
 
     </div>

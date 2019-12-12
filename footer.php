@@ -12,7 +12,7 @@
 ?>
 
 	</div><!-- #content -->
-
+<div class="site-footer">
 <!------=OR=-------->
 <?php if ( is_front_page() ) { ?>
 
@@ -187,7 +187,7 @@
 
 <?php } ?>
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon">
         <div class="footer-line">
             <div class="container">
                 <div class="row">
@@ -204,7 +204,7 @@
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+</div>
 <?php wp_footer(); ?>
 
 </body>

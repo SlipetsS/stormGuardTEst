@@ -27,20 +27,12 @@ $colorBlack: #000000;
 $font-family-sans-serif: "Helvetica";
 $fontFamilyTitles: 'Eurostile-Demi';
 $fontSize: 16px;
-//
-//body {
-//  h2 {
-//    color: red;
-//    font-family: myriad-pro, sans-serif;
-//    font-style: normal;
-//    font-weight: 300;
-//  }
-//  h1 {
-//    font-family: myriad-pro, sans-serif;
-//    font-style: normal;
-//    font-weight: 400;
-//  }
-//}
+
+
+html,
+body {
+  height: 100%;
+}
 body {
   font-size: $fontSize;
   color: $colorBlack;
@@ -306,7 +298,7 @@ div.wpcf7-response-output {
 }
 
 
-.latest-posts,.our-services {
+.latest-posts, .our-services {
   .btns-box {
     clear: both;
     padding:  15px 0 35px 0;
@@ -314,10 +306,12 @@ div.wpcf7-response-output {
   }
 }
 
+.padd-30 {
+  padding-bottom: 30px;
+}
 .our-services {
   text-align: center;
   border-bottom: 1px solid #d4d4d4;
-  margin-bottom: 35px;
   padding-top: 35px;
 
 
@@ -459,6 +453,7 @@ div.wpcf7-response-output {
 //Started box
 .started-box {
   margin-bottom: 35px;
+  padding-top: 35px;
 
   .started-box-one {
     position: relative;
@@ -938,4 +933,18 @@ footer {
 
     }
   }
+}
+
+
+//Footer Down
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.site-content {
+  flex: 1 0 auto;
+}
+.site-footer {
+  flex: 0 0 auto;
 }

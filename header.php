@@ -29,6 +29,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
+
 	<header id="masthead" class="site-header">
         <!--Header Top Line Block Start-->
         <div class="top-header-box">
@@ -97,11 +98,17 @@
             else {
              if ( has_post_thumbnail() ) :
                 the_post_thumbnail();
-            else:
-                 echo the_field('banner_image_default','option');
-            endif;
+
+           else: ?>
+               <img src="<?php echo the_field('banner_image_default','option'); ?>" alt=""/>
+                <?php endif;
 
             } ?>
+
+            <?php
+            if ( is_single() ) { ?>
+                <img src="<?php echo the_field('banner_image_default','option'); ?>" alt=""/>
+          <?php  } ?>
 
         </div>
         <!--Banner Block End-->
