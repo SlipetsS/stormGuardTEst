@@ -116,6 +116,19 @@ function storm_widgets_init() {
 }
 add_action( 'widgets_init', 'storm_widgets_init' );
 
+
+function slick_slider_scripts_and_styles() {
+    if(is_page_template('inc/template-home.php')):
+
+        //Enqueue our slider script
+        wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', null, null, true );
+        //Enqueue our slider style
+        wp_enqueue_style( 'slick', get_template_directory_uri().'/css/slick.css', null, null );
+
+    endif;
+}
+add_action( 'wp_enqueue_scripts', 'slick_slider_scripts_and_styles' );
+
 /**
  * Enqueue scripts and styles.
  */
@@ -126,8 +139,6 @@ function storm_scripts() {
 
 	wp_enqueue_script( 'storm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-//	wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'storm-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -137,6 +148,8 @@ function storm_scripts() {
 add_action( 'wp_enqueue_scripts', 'storm_scripts' );
 
 
+// Run Sick slider on HOME page
+include_once(TEMPLATEPATH . '/inc/home-slider.php');
 
 /**
  * Implement the Custom Header feature.
@@ -165,7 +178,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-
+// Create New Blocks
 add_action('acf/init', 'my_acf_init');
 function my_acf_init() {
 
@@ -280,7 +293,7 @@ if( function_exists('acf_add_options_page') ) {
     ));
 }
 
-
+// Post Type Projects
 function easytuts_projects_post() {
     $labels = array(
         'name'               => _x( 'Projects', 'post type general name' ),
@@ -310,8 +323,7 @@ function easytuts_projects_post() {
 add_action( 'init', 'easytuts_projects_post' );
 
 
-
-
+// Post Type Services
 function easytuts_services_post() {
     $labels = array(
         'name'               => _x( 'Services', 'post type general name' ),
@@ -340,7 +352,7 @@ function easytuts_services_post() {
 }
 add_action( 'init', 'easytuts_services_post' );
 
-
+// Post Type Testimonials
 function easytuts_testimonials_post() {
     $labels = array(
         'name'               => _x( 'Testimonials', 'post type general name' ),
@@ -369,7 +381,7 @@ function easytuts_testimonials_post() {
 }
 add_action( 'init', 'easytuts_testimonials_post' );
 
-
+// Custom Excerpt
 function get_excerpt(){
     $excerpt = get_the_content();
     $excerpt = preg_replace(" ([.*?])",'',$excerpt);
@@ -378,16 +390,7 @@ function get_excerpt(){
     $excerpt = substr($excerpt, 0, 350);
     $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
     $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
-    $excerpt = $excerpt.'... <a href="'.get_the_permalink().'">Read More</a>';
+    $excerpt = $excerpt.'. <a href="'.get_the_permalink().'">Read More</a>';
     return $excerpt;
 }
 
-//
-//if ( function_exists( 'add_theme_support' ) ) {
-//    add_theme_support( 'projects-thumbnails' );
-//    set_post_thumbnail_size( 125, 125, true ); // default Featured Image dimensions (cropped)
-//
-//    // additional image sizes
-//    // delete the next line if you do not need additional image sizes
-//    add_image_size( 'category-thumb', 300, 9999 ); // 300 pixels wide (and unlimited height)
-//}

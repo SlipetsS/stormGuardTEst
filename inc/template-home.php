@@ -140,35 +140,12 @@ get_header(); ?>
                 <div class="col-sm col-lg-12">
                    <h3><?php echo the_field('testimonials_title','option'); ?></h3>
                  </div>
-
-                <?php
-                $post_args = array( 'post_type' => 'testimonials','order' => 'ASC', 'posts_per_page' => 1 );
-                $post_query = new WP_Query( $post_args );
-
-                if ( $post_query->have_posts() ) :
-                    while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
-
-                        <div class="col-sm col-lg-12 testimonials-one">
-                            <div class="testimonials-one_content">
-                                <?php echo the_content(); ?>
-                            </div>
-                               <span><?php echo the_title(); ?></span>
-                               <span><?php echo the_field('team_position'); ?></span>
-                        </div>
-
-                        <?php wp_reset_postdata(); ?>
-
-                    <?php endwhile; // ending while loop ?>
-                <?php else:  ?>
-
-                    <p><?php _e( 'Sorry, no game matched your criteria.' ); ?></p>
-                <?php endif; // ending condition ?>
-
-
+                <div class="col-sm col-lg-12">
+                    <?php home_slider_template(); ?>
+                </div>
             </div>
         </div>
     </section>
-
 
 
 <section class="latest-posts">
@@ -187,7 +164,6 @@ get_header(); ?>
 
                     <div class="col-sm col-lg-4">
                         <div class="latest-posts_one">
-
                             <div class="date">
                                 <?php
                                 $post_date_month = get_the_date( 'M' );
@@ -199,7 +175,6 @@ get_header(); ?>
                             <div class="latest-posts_text">
                                 <h6><?php echo the_title();?></h6>
                                 <p><?php echo get_excerpt(); ?></p>
-
                             </div>
                             <div class="author">BY <?php the_author(); ?></div>
                         </div>
@@ -211,6 +186,7 @@ get_header(); ?>
             <?php else:  ?>
                 <p><?php _e( 'Sorry, no game matched your criteria.' ); ?></p>
             <?php endif; // ending condition ?>
+
             <div class="col-sm col-lg-12">
                 <div class="btns-box">
                     <a class="btn-yellow" href="<?php echo get_post_type_archive_link( 'post' ); ?>">View More News</a>
