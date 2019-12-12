@@ -32,10 +32,10 @@ $image = get_field('banner_image') ?: 295;
 ?>
 
 <?php if ( $image ) : ?>
-    <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>" style="background: url('<?php echo $image; ?>') no-repeat; ">
+    <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>" style="background: url('<?php echo $image; ?>') no-repeat; background-size: cover; ">
         <div class="container">
             <div class="row">
-                <div class="col-sm col-lg-6">
+                <div class="col-sm-12 col-lg-6 colmd-6">
                     <div class="banner-text">
                         <?php echo $text; ?>
                         <a class="btn" href="<?php echo $link; ?>"><?php echo $btnText; ?> <span> > </span></a>

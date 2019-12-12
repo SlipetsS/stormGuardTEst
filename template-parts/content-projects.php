@@ -11,28 +11,25 @@
 
 <div class="container">
     <div class="row">
+        <article class="clearfix" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <?php
-        $post_args = array( 'post_type' => 'projects','order' => 'ASC', 'posts_per_page' => 8 );
-        $post_query = new WP_Query( $post_args );
+            <div class="entry-content">
+                <a href="<?php echo get_permalink(); ?>"><?php  if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?></a>
+                <h3><?php the_title(); ?></h3>
+                <?php
+                the_content();
 
-        if ( $post_query->have_posts() ) :
-            while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
+                wp_link_pages(array(
+                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'storm'),
+                    'after' => '</div>',
+                ));
+                ?>
 
-                <div class="col-sm col-lg-4">
-                    <a href="<?php echo get_permalink(); ?>"><?php  if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?></a>
-                    <h5><?php echo the_title(); ?></h5>
-                    <p><?php echo get_excerpt(); ?></p>
-                </div>
+            </div>
+            <!-- .entry-content -->
 
-                <?php wp_reset_postdata(); ?>
-
-            <?php endwhile; // ending while loop ?>
-        <?php else:  ?>
-
-            <p><?php _e( 'Sorry, no game matched your criteria.' ); ?></p>
-        <?php endif; // ending condition ?>
-
+        </article>
+        <!-- #post-<?php the_ID(); ?> -->
     </div>
 </div>
 

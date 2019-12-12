@@ -11,7 +11,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm col-lg-12">
+        <div class="col-sm-12 col-lg-12">
                 <article class="clearfix" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                     <div class="entry-content">
@@ -36,7 +36,7 @@
 <div class="container">
     <div class="row our-services">
         <div class="line"></div>
-        <div class="col-sm col-lg-12">
+        <div class="col-sm-12 col-lg-12">
 
             <div class="content-info">
                 <h3><?php echo the_field('services_box_title','option'); ?></h3>
@@ -72,22 +72,23 @@
             $sub_categories = get_categories( $sub_args ); ?>
 
             <?php foreach ( $sub_categories as $sub_category ){ ?>
-                <div class="col-sm col-lg-4">
+                <div class="col-sm-12 col-lg-4 col-md-4">
                     <div class="service-one">
 
                         <?php
                         $term = get_term_by('slug', $sub_category->slug, 'services_category');
                         $image = get_field('icon_category', $term);
-                         ?>
+                        $current_term = get_term_by( 'slug', $sub_category->slug , 'services_category' );
+                        ?>
 
                         <?php if( $image ): ?>
-                            <img src="<?php echo $image; ?>" alt=""/>
+                            <a href="<?php echo get_term_link($term->slug, 'services_category');?>"><img src="<?php echo $image; ?>" alt=""/></a>
                         <?php endif; ?>
 
-                       <?php echo '<h5>'. $sub_category->name . '</h5>';?>
-                       <p><?php $current_term = get_term_by( 'slug', $sub_category->slug , 'services_category' );
-                        echo $current_term->description; ?>
-                       </p>
+                        <?php echo '<h5>'. $sub_category->name . '</h5>';?>
+                        <p><?php
+                            echo $current_term->description; ?>
+                        </p>
                     </div>
                 </div>
 
@@ -105,7 +106,7 @@
 
 <div class="container">
     <div class="row started-box">
-        <div class="col-sm col-lg-12">
+        <div class="col-sm-12 col-lg-12">
             <div class="content-info">
                 <h3><?php echo the_field('get_started_title','option'); ?></h3>
                 <p> <?php echo the_field('get_started_content','option'); ?>
@@ -121,7 +122,7 @@
                 $link = get_sub_field('page_link_info_block');
 
                 // Use variables below ?>
-                <div class="col-sm col-lg-4">
+                <div class="col-sm-12 col-lg-4 col-md-4">
                     <div class="started-box-one">
                         <img src="<?php echo $image; ?>" />
                         <div class="started-box-one_link">
@@ -155,13 +156,13 @@
             <?php endif; ?>
 
 
-            <div class="col-sm col-lg-8 franchise-box__left p-0">
+            <div class="col-sm-12 col-lg-8 col-md-6 franchise-box__left p-0">
                 <div class="franchise-box__left_find">
                     <h2><?php echo $titleDefault; ?></h2>
                     <p><?php echo $contentDefault; ?></p>
                 </div>
             </div>
-            <div class="col-sm col-lg-4 franchise-box__left p-0">
+            <div class="col-sm-12 col-lg-4 col-md-6 franchise-box__left p-0">
                 <div class="franchise-box__right_form">
                     <?php  echo do_shortcode($formCodeDefault); ?>
                 </div>

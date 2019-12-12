@@ -19,7 +19,7 @@
     <div class="footer-aditional main-footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm col-lg-6">
+                <div class="col-sm-12 col-lg-6 col-md-6">
                     <div class="footer-contact">
                         <?php if (have_rows('contact_box', 'option')): ?>
                             <?php while (have_rows('contact_box', 'option')): the_row();
@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm col-lg-6">
+                <div class="col-sm-12 col-lg-6 col-md-6">
                     <div class="footer-projects">
                         <?php if (have_rows('past_projects_box', 'option')): ?>
                             <?php while (have_rows('past_projects_box', 'option')): the_row();
@@ -69,7 +69,7 @@
                                         if ( $post_query->have_posts() ) :
                                             while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
 
-                                                <div class="col-sm col-lg-3">
+                                                <div class="col-3 col-sm-3 col-lg-3 col-md-3">
                                                     <a href="<?php echo get_permalink(); ?>"><?php  if ( has_post_thumbnail() ) {
                                                             the_post_thumbnail( 'projects-thumbnail', array( 'class' => 'alignleft' ) );
                                                         } ?>
@@ -102,7 +102,7 @@
     <div class="footer-aditional">
         <div class="container">
             <div class="row">
-                <div class="col-sm col-lg-6">
+                <div class="col-sm-12 col-lg-6 col-md-6">
                     <div class="footer-contact">
                         <?php if (have_rows('default_contact_box', 'option')): ?>
                             <?php while (have_rows('default_contact_box', 'option')): the_row();
@@ -138,7 +138,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm col-lg-6">
+                <div class="col-sm-12 col-lg-6 col-md-6">
                     <div class="footer-projects">
                         <?php if (have_rows('default_past_projects_box', 'option')): ?>
                             <?php while (have_rows('default_past_projects_box', 'option')): the_row();
@@ -162,7 +162,7 @@
                                         if ( $post_query->have_posts() ) :
                                             while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
 
-                                                <div class="col-sm col-lg-3">
+                                                <div class="col-3 col-sm-3 col-lg-3 col-md-3">
                                                     <a href="<?php echo get_permalink(); ?>"><?php  if ( has_post_thumbnail() ) {
                                                             the_post_thumbnail( 'projects-thumbnail', array( 'class' => 'alignleft' ) );
                                                         } ?>
@@ -191,10 +191,10 @@
         <div class="footer-line">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm col-lg-6">
+                    <div class="col-sm-12 col-lg-6 col-md-12">
                           <p><?php echo the_field('copyright','option'); ?></p>
                     </div>
-                    <div class="col-sm col-lg-6">
+                    <div class="col-sm-12 col-lg-6 col-md-12">
                           <?php wp_nav_menu( [ 'menu' => 'Footer Menu' ] ); ?>
                     </div>
 

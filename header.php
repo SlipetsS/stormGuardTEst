@@ -35,12 +35,12 @@
         <div class="top-header-box">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm col-lg-4">
+                    <div class="col-sm-12 col-lg-4 col-md-4">
                         <div class="custom-line">
                             <a href="<?php echo the_field('header_top_link','option'); ?>"><?php echo the_field('header_top_tiltle','option'); ?></a>
                         </div>
                     </div>
-                    <div class="col-sm col-lg-8">
+                    <div class="col-sm-12 col-lg-8 col-md-8">
                         <div class="custom-menu">
                             <?php wp_nav_menu( [ 'menu' => 'Top Line Menu' ] ); ?>
                         </div>
@@ -54,7 +54,7 @@
         <div class="site-info">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm col-lg-3">
+                    <div class="col-sm-12 col-lg-3 col-md-3">
                         <div class="site-branding">
                             <?php
                             the_custom_logo();
@@ -74,7 +74,7 @@
                             <?php endif; ?>
                         </div><!-- .site-branding -->
                     </div>
-                    <div class="col-sm col-lg-9">
+                    <div class="col-sm-12 col-lg-9 col-md-9">
                         <nav id="site-navigation" class="main-navigation">
                             <?php
                             wp_nav_menu( array(
@@ -104,12 +104,6 @@
                 <?php endif;
 
             } ?>
-
-<!--            --><?php
-//            if ( is_single() ) { ?>
-<!--                <img src="--><?php //echo the_field('banner_image_default','option'); ?><!--" alt=""/>-->
-<!--          --><?php // } ?>
-
         </div>
         <!--Banner Block End-->
 
@@ -118,7 +112,7 @@
         else { ?>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm col-lg-12">
+                    <div class="col-sm-12 col-lg-12 col-md-12">
                         <div class="breadcrumbs">
                             <?php echo do_shortcode("[breadcrumb]"); ?>
                         </div>

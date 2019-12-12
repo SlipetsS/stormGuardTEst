@@ -1,0 +1,102 @@
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+
+
+
+
+} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and  (max-width: 64em) {
+  footer {
+    .footer-line {
+      margin-bottom: 10px;
+      p {
+        text-align: center;
+      }
+    }
+    ul {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 40em) {
+  .started-box-one {
+    margin-bottom: 20px;
+  }
+  .franchise-box__right_form {
+    margin-left: 43px;
+    margin-top: 20px;
+  }
+
+ .franchise-box__left_find {
+    margin-right: 43px;
+  }
+
+  .custom-line {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .site-branding {
+    text-align: center;
+  }
+
+  .custom-menu {
+    ul {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  .content-page  {
+    img {
+      margin-bottom: 20px;
+    }
+  }
+
+  header  {
+    .site-info {
+
+      .main-navigation {
+        .menu {
+          display: inline-block;
+
+          li {
+            display: inline-block;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .main-navigation * {
+        height: auto;
+
+      }
+    }
+  }
+  .banner-page {
+    width: 100%;
+    overflow-x: hidden;
+
+    img {
+      width: auto;
+      margin: 0;
+    }
+  }
+  .alignleft {
+    float: none;
+    height: auto;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+}

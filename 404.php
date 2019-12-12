@@ -11,7 +11,7 @@ get_header();
 ?>
     <div class="container">
         <div class="row">
-            <div class="col-sm col-lg-12">
+            <div class="col-sm-12 col-lg-12 col-md-12">
                 <div id="primary" class="content-area">
                     <main id="main" class="site-main">
 

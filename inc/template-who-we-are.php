@@ -28,7 +28,7 @@ get_header(); ?>
 
     <div class="container">
         <div class="row started-box">
-            <div class="col-sm col-lg-12">
+            <div class="col-sm-12 col-lg-12 col-md-12">
                 <div class="content-info">
                     <h3><?php echo the_field('get_started_title','option'); ?></h3>
                     <p> <?php echo the_field('get_started_content','option'); ?>
@@ -44,7 +44,7 @@ get_header(); ?>
                     $link = get_sub_field('page_link_info_block');
 
                     // Use variables below ?>
-                    <div class="col-sm col-lg-4">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="started-box-one">
                             <img src="<?php echo $image; ?>" />
                             <div class="started-box-one_link">
@@ -78,13 +78,13 @@ get_header(); ?>
                 <?php endif; ?>
 
 
-                <div class="col-sm col-lg-8 franchise-box__left p-0">
+                <div class="col-sm-12 col-lg-8 col-md-6 franchise-box__left p-0">
                     <div class="franchise-box__left_find">
                         <h2><?php echo $titleDefault; ?></h2>
                         <p><?php echo $contentDefault; ?></p>
                     </div>
                 </div>
-                <div class="col-sm col-lg-4 franchise-box__left p-0">
+                <div class="col-sm-12 col-lg-4 col-md-6 franchise-box__left p-0">
                     <div class="franchise-box__right_form">
                         <?php  echo do_shortcode($formCodeDefault); ?>
                     </div>

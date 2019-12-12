@@ -42,13 +42,13 @@ get_header(); ?>
                 <?php endif; ?>
 
 
-                <div class="col-sm col-lg-8 franchise-box__left p-0">
+                <div class="col-sm-12 col-lg-8 col-md-6 franchise-box__left p-0">
                     <div class="franchise-box__left_find">
                         <h2><?php echo $titleDefault; ?></h2>
                         <p><?php echo $contentDefault; ?></p>
                     </div>
                 </div>
-                <div class="col-sm col-lg-4 franchise-box__left p-0">
+                <div class="col-sm-12 col-lg-4 col-md-6 franchise-box__left p-0">
                     <div class="franchise-box__right_form">
                         <?php  echo do_shortcode($formCodeDefault); ?>
                     </div>
@@ -59,7 +59,7 @@ get_header(); ?>
 
     <div class="container">
         <div class="row our-services">
-            <div class="col-sm col-lg-12">
+            <div class="col-sm-12 col-lg-12 col-md-12">
                 <div class="content-info">
                     <h3><?php echo the_field('services_box_title'); ?></h3>
                     <p><?php echo the_field('services_box_content'); ?> </p>
@@ -95,7 +95,7 @@ get_header(); ?>
                 $sub_categories = get_categories( $sub_args ); ?>
 
                 <?php foreach ( $sub_categories as $sub_category ){ ?>
-                    <div class="col-sm col-lg-4">
+                    <div class="col-sm-12 col-lg-4 col-md-4">
                         <div class="service-one">
 
                             <?php
@@ -121,7 +121,7 @@ get_header(); ?>
             } ?>
 
 
-            <div class="col-sm col-lg-12">
+            <div class="col-sm-12 col-lg-12">
                 <div class="btns-box">
                     <a class="btn-yellow" href="<?php echo get_post_type_archive_link( 'services' ); ?>">View All Services</a>
                 </div>
@@ -133,7 +133,7 @@ get_header(); ?>
 
     <div class="container">
         <div class="row started-box">
-            <div class="col-sm col-lg-12">
+            <div class="col-sm-12 col-lg-12 col-md-12">
                 <div class="content-info">
                     <h3><?php echo the_field('get_started_title','option'); ?></h3>
                     <p> <?php echo the_field('get_started_content','option'); ?>
@@ -149,7 +149,7 @@ get_header(); ?>
                     $link = get_sub_field('page_link_info_block');
 
                     // Use variables below ?>
-                    <div class="col-sm col-lg-4">
+                    <div class="col-sm-12 col-lg-4 col-md-4">
                         <div class="started-box-one">
                             <img src="<?php echo $image; ?>" />
                             <div class="started-box-one_link">
@@ -170,7 +170,7 @@ get_header(); ?>
     <section class="testimonials">
         <div class="container">
             <div class="row">
-                <div class="col-sm col-lg-12">
+                <div class="col-sm-12 col-lg-12 col-md-12">
                    <h3><?php echo the_field('testimonials_title','option'); ?></h3>
                  </div>
                 <div class="col-sm col-lg-12">
@@ -184,7 +184,7 @@ get_header(); ?>
 <section class="latest-posts">
     <div class="container">
         <div class="row">
-            <div class="col-sm col-lg-12">
+            <div class="col-sm-12 col-lg-12 col-md-12">
                 <h3><?php echo the_field('latest_news_title','option'); ?></h3>
             </div>
 
@@ -195,7 +195,7 @@ get_header(); ?>
             if ( $post_query->have_posts() ) :
                 while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
 
-                    <div class="col-sm col-lg-4">
+                    <div class="col-sm-12 col-lg-4 col-md-4">
                         <div class="latest-posts_one">
                             <div class="date">
                                 <?php
@@ -220,7 +220,7 @@ get_header(); ?>
                 <p><?php _e( 'Sorry, no game matched your criteria.' ); ?></p>
             <?php endif; // ending condition ?>
 
-            <div class="col-sm col-lg-12">
+            <div class="col-sm-12 col-lg-12 col-md-12">
                 <div class="btns-box">
                     <a class="btn-yellow" href="<?php echo get_post_type_archive_link( 'post' ); ?>">View More News</a>
                 </div>

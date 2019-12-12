@@ -11,7 +11,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm col-lg-12">
+        <div class="col-sm-12 col-lg-12">
             <div class="content-page">
                 <article class="clearfix" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -40,11 +40,11 @@
     <section class="franchise-box">
         <div class="container">
             <div class="row">
-                <div class="col-sm col-lg-8 franchise-box__left">
+                <div class="col-sm-12 col-lg-8 col-md-8 franchise-box__left">
                     <h2> <?php echo the_field('franchise_owner_box_title'); ?></h2>
                     <p> <?php echo the_field('franchise_owner_box_content'); ?></p>
                 </div>
-                <div class="col-sm col-lg-4 franchise-box__right">
+                <div class="col-sm-12 col-lg-4 col-md-4 franchise-box__right">
                     <div class="franchise-box__right_form">
                         <a class="btn" href="<?php echo the_field('franchise_owner_box_link_button'); ?>">  <?php echo the_field('franchise_owner_box_title_button'); ?></a>
                     </div>

@@ -176,6 +176,7 @@ header, footer {
         span {
           text-decoration: underline;
           color: $colorRed!important;
+          text-transform: capitalize;
         }
 
         .separator {
@@ -916,29 +917,24 @@ footer {
 //Slick slider
 .slick-dots {
   li {
-    width: 16px;
-    height: 16px;
 
     button {
-      background: #d8d8d8;
-      border-radius: 92px;
       padding: 0;
-      width: 15px;
-      height: 15px;
 
     &:before {
       font-size: 46px;
-      line-height: 15px;
+      line-height: 16px;
       width: auto;
       height: auto;
       color: #fff;
       opacity: 1;
+      border: 1px solid #d8d8d8;
+      border-radius: 50px;
       }
   }
   }
   .slick-active {
     button {
-      background: #000;
 
       &:before {
         color: #000;
@@ -948,7 +944,6 @@ footer {
     }
   }
 }
-
 
 //Footer Down
 .site {
@@ -962,3 +957,7 @@ footer {
 .site-footer {
   flex: 0 0 auto;
 }
+
+
+@import "media";
+
