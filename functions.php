@@ -122,7 +122,7 @@ add_action( 'widgets_init', 'storm_widgets_init' );
 function storm_scripts() {
 	wp_enqueue_style( 'storm-style', get_stylesheet_uri() );
 
-    wp_enqueue_style( 'styles-fonts', get_template_directory_uri() . '/fonts/fonts.css', array(), '20151215', true);
+    wp_enqueue_style( 'styles-fonts', get_stylesheet_directory_uri() . '/fonts/fonts.css', array(), '20151215', true);
 
 	wp_enqueue_script( 'storm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -196,7 +196,7 @@ function my_acf_init() {
 
         acf_register_block(array(
             'name'				=> 'get started',
-            'title'				=> __('Get Started Home'),
+            'title'				=> __('Get Started'),
             'description'		=> __('A custom Get Started block.'),
             'render_callback'	=> 'my_acf_block_render_callback',
             'category'			=> 'formatting',
@@ -244,12 +244,40 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title' 	=> 'Theme Footer Settings',
-        'menu_title'	=> 'Footer',
+        'page_title' 	=> 'Theme Footer Home Page Settings',
+        'menu_title'	=> 'Footer Home Page',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Theme Footer Default Page Settings',
+        'menu_title'	=> 'Footer Default Page',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Theme Find Franchise Settings',
+        'menu_title'	=> 'Find Franchise',
         'parent_slug'	=> 'theme-general-settings',
     ));
 
 
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Theme Get Started Settings',
+        'menu_title'	=> 'Get Started',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Theme Copyright Settings',
+        'menu_title'	=> 'Copyright',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Theme Testimonials Settings',
+        'menu_title'	=> 'Testimonials',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
 }
 
 
@@ -273,7 +301,7 @@ function easytuts_projects_post() {
         'labels'        => $labels,
         'description'   => 'Holds projects and game specific data',
         'public'        => true,
-        'menu_position' => 5,
+        'menu_position' => 4,
         'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
         'has_archive'   => true,
     );
@@ -312,6 +340,47 @@ function easytuts_services_post() {
 }
 add_action( 'init', 'easytuts_services_post' );
 
+
+function easytuts_testimonials_post() {
+    $labels = array(
+        'name'               => _x( 'Testimonials', 'post type general name' ),
+        'singular_name'      => _x( 'Testimonial', 'post type singular name' ),
+        'add_new'            => _x( 'Add New', 'testimonial' ),
+        'add_new_item'       => __( 'Add New Testimonials' ),
+        'edit_item'          => __( 'Edit Testimonial' ),
+        'new_item'           => __( 'New Testimonial' ),
+        'all_items'          => __( 'All Testimonials' ),
+        'view_item'          => __( 'View Testimonial' ),
+        'search_items'       => __( 'Search Testimonial' ),
+        'not_found'          => __( 'No service found' ),
+        'not_found_in_trash' => __( 'No service found in the Trash' ),
+        'parent_item_colon'  => '',
+        'menu_name'          => 'Testimonials'
+    );
+    $args = array(
+        'labels'        => $labels,
+        'description'   => 'Holds testimonials and testimonial specific data',
+        'public'        => true,
+        'menu_position' => 6,
+        'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+        'has_archive'   => true,
+    );
+    register_post_type( 'testimonials', $args );
+}
+add_action( 'init', 'easytuts_testimonials_post' );
+
+
+function get_excerpt(){
+    $excerpt = get_the_content();
+    $excerpt = preg_replace(" ([.*?])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, 350);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt.'... <a href="'.get_the_permalink().'">Read More</a>';
+    return $excerpt;
+}
 
 //
 //if ( function_exists( 'add_theme_support' ) ) {

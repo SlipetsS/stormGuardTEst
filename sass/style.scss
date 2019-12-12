@@ -22,8 +22,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 $colorYellow : #ffdd00;
 $colorRed: #db302c;
 $colorBlack: #000000;
-$font-family-sans-serif: "Helvetica Neue";
+$font-family-sans-serif: "Helvetica";
 $fontFamilyTitles: 'Eurostile-Demi';
+$fontSize: 16px;
 //
 //body {
 //  h2 {
@@ -38,6 +39,14 @@ $fontFamilyTitles: 'Eurostile-Demi';
 //    font-weight: 400;
 //  }
 //}
+body {
+  font-size: $fontSize;
+  color: $colorBlack;
+  font-family: $font-family-sans-serif;
+}
+.container {
+  max-width: 1200px;
+}
 
 ul {
   margin: 0;
@@ -78,10 +87,27 @@ p {
   color: $colorBlack;
   font-family: $font-family-sans-serif;
   font-size: 16px;
-  line-height: 23px;
+  line-height: 21px;
   margin-bottom: 25px;
   a {
     color: $colorRed;
+  }
+}
+
+
+.btn-yellow {
+  color: $colorBlack;
+  text-transform: capitalize;
+  font-size: $fontSize;
+  font-weight: bold;
+  background-color: $colorYellow;
+  padding: 15px 37px;
+  display: inline-block;
+  font-family: $font-family-sans-serif;
+
+  &:hover {
+    text-decoration: none;
+    color: $colorBlack;
   }
 }
 
@@ -119,7 +145,7 @@ header, footer {
     }
   }
 }
-.current-menu-item {
+.current-menu-item, .current-page-ancestor {
   a {
     color: $colorRed;
   }
@@ -136,7 +162,7 @@ header, footer {
 .breadcrumbs {
   border-bottom: 1px solid #d4d4d4;
   padding: 20px 0;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 
   .breadcrumb-container {
     padding: 0;
@@ -165,11 +191,19 @@ header, footer {
         a {
           font-size: 14px;
           font-family: $font-family-sans-serif;
+          background: transparent!important;
 
           &:hover {
             text-decoration: none;
           }
 
+        }
+        a[href^="#"] {
+
+          span {
+            color: #000!important;
+            text-decoration: none!important;
+          }
         }
 
         &:after {
@@ -214,14 +248,16 @@ header, footer {
 .content-page {
   padding-bottom: 50px;
   border-bottom: 1px solid #d4d4d4;
-  margin-bottom: 35px;
 
   img {
-    float: left;
-    margin-right: 20px;
+    margin-right: 10px;
   }
 }
 
+
+div.wpcf7-response-output {
+  position: absolute;
+}
 .post-thumbnail {
    img {
      width: 100%;
@@ -267,11 +303,22 @@ header, footer {
   }
 }
 
+
+.latest-posts,.our-services {
+  .btns-box {
+    clear: both;
+    padding:  15px 0 27px 0;
+    text-align: center;
+  }
+}
+
 .our-services {
   text-align: center;
   border-bottom: 1px solid #d4d4d4;
   margin-bottom: 35px;
   padding-bottom: 30px;
+  padding-top: 35px;
+
 
   h5 {
     margin-bottom: 12px;
@@ -286,6 +333,112 @@ header, footer {
 
     img {
       margin-bottom: 6px;
+    }
+  }
+}
+
+
+//Testimonials
+.testimonials {
+  background: #f7f8f8;
+  padding: 53px 0;
+
+  h3 {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .testimonials-one {
+    span {
+      text-align: right;
+      font-size: 14px;
+      color: $colorBlack;
+      font-style: oblique;
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+  .testimonials-one_content {
+    background: #fff;
+    padding: 25px 13px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $colorBlack;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+}
+
+//Latest Posts
+
+.latest-posts {
+  padding: 32px 0;
+  h3 {
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+
+
+  .latest-posts_one {
+    border: 1px solid #e1e1e1;
+    margin-bottom: 20px;
+    position: relative;
+
+    .date {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 10px;
+      background: $colorYellow;
+
+      span {
+        color: $colorBlack;
+        display: block;
+        text-align: center;
+
+      }
+      .day {
+        font-weight: bold;
+        padding-top: 4px;
+      }
+    }
+
+    .author {
+      padding: 15px;
+      border-top: 1px solid #e1e1e1;
+      font-family: $font-family-sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    img {
+      width: 100%;
+    }
+    .latest-posts_text {
+      padding: 15px;
+    }
+
+    h6 {
+      font-size: 26px;
+      font-family: $fontFamilyTitles;
+      color: $colorBlack;
+      margin-bottom: 12px;
+    }
+
+    p {
+      a {
+        color: $colorRed;
+        font-size: $fontSize;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
   }
 }
@@ -341,7 +494,7 @@ header, footer {
 
   .franchise-box__left_find {
     position: relative;
-    padding-left: 43px;
+    padding-left: 63px;
     margin-left: 43px;
 
     &:before {
@@ -360,6 +513,17 @@ header, footer {
   .franchise-box__right_form {
     margin-right: 43px;
 
+    .btn {
+      display: flex;
+    }
+
+  .btn, input[type=submit] {
+      background-color: $colorRed;
+      padding: 16px 30px;
+      color: #fff;
+      margin-bottom: 0;
+    }
+
     form {
       display: flex;
       flex-direction: row;
@@ -372,8 +536,22 @@ header, footer {
         display: none;
       }
 
+      span.wpcf7-not-valid-tip {
+        position: absolute;
+        bottom: -25px;
+      }
+
+      div.wpcf7-response-output {
+        position: absolute;
+        top: -49px;
+        padding: 5px;
+        margin: 0;
+        background: #fff;
+      }
+
       .wpcf7-form-control-wrap {
         width: 65%;
+        display: flex;
       }
 
       .ajax-loader {
@@ -388,14 +566,10 @@ header, footer {
         padding: 17px 13px;
         margin-bottom: 0;
       }
-
       input[type=submit] {
-        background-color: $colorRed;
-        padding: 16px 30px;
-        color: #fff;
         width: 35%;
-        margin-bottom: 0;
       }
+
     }
   }
 }
@@ -580,77 +754,76 @@ form {
 
 
 //Footer Styles
-footer {
+
+
+.footer-aditional {
+  background: #db302c;
+  padding: 39px 0 30px 0;
   border-top: 5px solid #fff;
 
-  .footer-aditional {
-    background: #db302c;
-    padding: 39px 0 30px 0;
-    border-top: 5px solid #fff;
+  .footer-contact  {
+    padding-right: 20px;
+  }
 
-    .footer-contact  {
-      padding-right: 20px;
+  p {
+    margin-bottom: 24px;
+    color: #fff;
+    font-family: myriad-pro, sans-serif;
+    font-weight: normal;
+  }
+
+  .footer-projects {
+    position: relative;
+    padding-left: 20px;
+
+    &:before {
+      content: "";
+      height: 100%;
+      border-left: 1px solid #e6534f;
+      width: 2px;
+      background: #bb2723;
+      position: absolute;
+      left: -15px;
+      top: 0;
+      display: block;
+    }
+
+    img {
+      border: 1px solid #fff;
+      width: 100%;
+      height: auto;
+      margin: 0 0 26px 0;
     }
 
     p {
-      margin-bottom: 24px;
-      color: #fff;
-      font-family: myriad-pro, sans-serif;
-      font-weight: normal;
-    }
-
-    .footer-projects {
-      position: relative;
-      padding-left: 20px;
-
-      &:before {
-        content: "";
-        height: 100%;
-        border-left: 1px solid #e6534f;
-        width: 2px;
-        background: #bb2723;
-        position: absolute;
-        left: -15px;
-        top: 0;
-        display: block;
-      }
-
-      img {
-        border: 1px solid #fff;
-        margin: 0 0 20px 0;
-      }
-
-
-      p {
-        a {
+      a {
+        color: #fff;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
           color: #fff;
-          text-decoration: underline;
-          &:hover {
-            text-decoration: none;
-            color: #fff;
-          }
         }
       }
+    }
 
-      .form-line-btn {
-        display:flex;
-        justify-content:center;
-        align-items:center;
 
-        .btn-white {
-          background: #fff;
-          color: #db302c;
-          font-family: $font-family-sans-serif;
-          font-weight: bold;
-          padding: 25px 35px;
-          display: flex;
-          align-items: baseline;
-          align-self: center;
+    .form-line-btn {
+      display:flex;
+      justify-content:center;
+      align-items:center;
 
-          &:hover {
-            text-decoration: none;
-          }
+      .btn-white {
+        background: #fff;
+        color: #db302c;
+        font-family: $font-family-sans-serif;
+        font-weight: bold;
+        padding: 25px 35px;
+        display: flex;
+        align-items: baseline;
+        align-self: center;
 
+        &:hover {
+          text-decoration: none;
         }
 
       }
@@ -658,6 +831,37 @@ footer {
     }
 
   }
+
+  .btns-box {
+    .btn-white {
+      max-width: 388px;
+      margin-bottom: 20px;
+        background: #fff;
+        color: #db302c;
+        font-family: $font-family-sans-serif;
+        font-weight: bold;
+        padding: 25px 29px;
+        display: flex;
+        align-items: baseline;
+        align-self: center;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+      }
+    }
+}
+
+.main-footer.footer-aditional {
+  .footer-projects {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+footer {
 
   .footer-line {
     background: #000;
