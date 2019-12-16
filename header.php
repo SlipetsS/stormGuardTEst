@@ -93,33 +93,31 @@
 	<div id="content" class="site-content">
 
         <!--Banner Block Start-->
-            <?php if( is_front_page() ){ }
-            else { ?>
+            <?php if( !is_front_page() ){ ?>
 
-            <?php if ( has_post_thumbnail() ) : ?>
+                <?php if ( has_post_thumbnail() ) : ?>
                     <div class="banner-page" style="background: url('<?php the_post_thumbnail_url(); ?>') no-repeat; background-size: cover; background-position: center;">
                         <img src="<?php the_post_thumbnail_url(); ?>" alt=""/>
                     </div>
-           <?php else: ?>
-                <div class="banner-page" style="background: url('<?php echo the_field('banner_image_default','option'); ?>') no-repeat;background-size: cover; background-position: center;">
-                       <img src="<?php echo the_field('banner_image_default','option'); ?>" alt=""/>
-                </div>
+                <?php else: ?>
+                    <div class="banner-page" style="background: url('<?php echo the_field('banner_image_default','option'); ?>') no-repeat;background-size: cover; background-position: center;">
+                        <img src="<?php echo the_field('banner_image_default','option'); ?>" alt=""/>
+                    </div>
                 <?php endif;
             } ?>
-
         <!--Banner Block End-->
 
         <!--Breadcrumbs Block Start-->
-        <?php if( is_front_page() ){ }
-        else { ?>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-lg-12 col-md-12">
-                        <?php the_breadcrumb(); ?>
-                    </div>
+        <?php if( !is_front_page() ){ ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 col-md-12">
+                    <?php the_breadcrumb(); ?>
                 </div>
             </div>
-           <?php } ?>
+        </div>
+
+       <?php  } ?>
 
 
         <!--Breadcrumbs Block End-->
