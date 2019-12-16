@@ -91,7 +91,6 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-
         <!--Banner Block Start-->
             <?php if( !is_front_page() ){ ?>
 
@@ -116,9 +115,6 @@
                 </div>
             </div>
         </div>
-
        <?php  } ?>
-
-
         <!--Breadcrumbs Block End-->
 
