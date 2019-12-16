@@ -4,7 +4,6 @@
  */
 get_header(); ?>
 
-
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
 
@@ -107,7 +106,8 @@ get_header(); ?>
                             <?php if( $image ): ?>
                                 <a href="<?php echo get_term_link($term->slug, 'services_category')?>">
 
-                                    <img src="<?php echo $image; ?>" alt=""/></a>
+                                    <img src="<?php echo($image['sizes']['service-thumbnail']); ?>" />
+                                </a>
                             <?php endif; ?>
 
                             <?php echo '<h5>'. $sub_category->name . '</h5>';?>

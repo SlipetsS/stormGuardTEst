@@ -99,10 +99,13 @@ p {
   padding: 15px 37px;
   display: inline-block;
   font-family: $font-family-sans-serif;
+  transition: all 2s;
+
 
   &:hover {
     text-decoration: none;
     color: $colorBlack;
+    box-shadow: 1px 2px 13px rgba(0,0,0,0.4);
   }
 }
 
@@ -158,6 +161,22 @@ header, footer {
   border-bottom: 1px solid #d4d4d4;
   padding: 20px 0;
   margin-bottom: 18px;
+
+  a {
+    text-decoration: underline;
+    color: $colorRed!important;
+    text-transform: capitalize;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+   }
+
+  span {
+    margin: 0 11px;
+  }
+
 
   .breadcrumb-container {
     padding: 0;
@@ -250,15 +269,21 @@ header, footer {
   }
 }
 
-
 div.wpcf7-response-output {
-  position: absolute;
+  padding: 8px;
 }
+span.wpcf7-not-valid-tip {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
 .post-thumbnail {
    img {
      width: 100%;
    }
 }
+
+
 
 //Franchise Box
 .franchise-box, .franchise-box-find {
@@ -287,6 +312,14 @@ div.wpcf7-response-output {
 
 }
 
+.single  {
+  .entry-content {
+    a {
+      float: left;
+      margin-right: 20px;
+    }
+  }
+}
 
 //Our Services
 
@@ -343,6 +376,7 @@ div.wpcf7-response-output {
 
     img {
       margin-bottom: 6px;
+      border-radius: 100px;
     }
   }
 }
@@ -394,8 +428,9 @@ div.wpcf7-response-output {
 
   .latest-posts_one {
     border: 1px solid #e1e1e1;
-    margin-bottom: 20px;
     position: relative;
+    margin-bottom: 20px;
+    //height: 100%;
 
      p {
        line-height: 26px;
@@ -435,7 +470,10 @@ div.wpcf7-response-output {
     }
 
     .latest-posts_text {
+      display: flex;
+      flex-flow: column;
       padding: 15px 15px 20px 15px;
+      clear: both;
 
       h6 {
         font-size: 26px;
@@ -443,6 +481,9 @@ div.wpcf7-response-output {
         color: $colorBlack;
         margin-bottom: 12px;
         width: 60%;
+        height: 3em;
+        overflow: hidden
+
       }
 
       p {
@@ -458,8 +499,6 @@ div.wpcf7-response-output {
       }
 
     }
-
-
 
   }
 }
@@ -561,7 +600,8 @@ div.wpcf7-response-output {
 
       span.wpcf7-not-valid-tip {
         position: absolute;
-        bottom: -25px;
+        bottom: -35px;
+        color: #fff;
       }
 
       div.wpcf7-response-output {
@@ -575,6 +615,8 @@ div.wpcf7-response-output {
       .wpcf7-form-control-wrap {
         width: 65%;
         display: flex;
+        position: relative;
+        flex-direction: column;
       }
 
       .ajax-loader {
@@ -641,15 +683,14 @@ header {
   }
 }
 
-
 //Banner Styles
-
 .banner-page {
+  background-position: center;
   img {
+    opacity: 0;
     width: 100%;
   }
 }
-
 .banner {
   padding: 163px 0  112px 0;
   background-size: cover;
@@ -700,7 +741,7 @@ form {
     .wpcf7-form-control-wrap {
       flex: 50%;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       margin-left: 24px;
 
       &:first-child {
@@ -847,9 +888,11 @@ form {
         display: flex;
         align-items: baseline;
         align-self: center;
+        transition: all 2s;
 
         &:hover {
           text-decoration: none;
+          box-shadow: 1px 2px 13px rgba(0,0,0,0.4);
         }
 
       }
@@ -870,9 +913,11 @@ form {
       display: flex;
       align-items: baseline;
       align-self: center;
+      transition: all 2s;
 
         &:hover {
           text-decoration: none;
+          box-shadow: 1px 2px 13px rgba(0,0,0,0.4);
         }
 
       }
@@ -949,19 +994,21 @@ footer {
   }
 }
 
-//Footer Down
+//Footer Down, Latest Post Author
+
 .site {
-  display: flex;
-  flex-direction: column;
   min-height: 100%;
 }
-.site-content {
+.site , .latest-posts_one{
+  display: flex;
+  flex-direction: column;
+}
+.site-content, .latest-posts_text {
   flex: 1 0 auto;
 }
-.site-footer {
+.site-footer, .author {
   flex: 0 0 auto;
 }
-
 
 @import "media";
 

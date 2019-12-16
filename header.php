@@ -91,20 +91,22 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+
         <!--Banner Block Start-->
-        <div class="banner-page">
-
             <?php if( is_front_page() ){ }
-            else {
-             if ( has_post_thumbnail() ) :
-                the_post_thumbnail();
+            else { ?>
 
-           else: ?>
-               <img src="<?php echo the_field('banner_image_default','option'); ?>" alt=""/>
+            <?php if ( has_post_thumbnail() ) : ?>
+                    <div class="banner-page" style="background: url('<?php the_post_thumbnail_url(); ?>') no-repeat; background-size: cover; background-position: center;">
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt=""/>
+                    </div>
+           <?php else: ?>
+                <div class="banner-page" style="background: url('<?php echo the_field('banner_image_default','option'); ?>') no-repeat;background-size: cover; background-position: center;">
+                       <img src="<?php echo the_field('banner_image_default','option'); ?>" alt=""/>
+                </div>
                 <?php endif;
-
             } ?>
-        </div>
+
         <!--Banner Block End-->
 
         <!--Breadcrumbs Block Start-->
@@ -113,9 +115,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-lg-12 col-md-12">
-                        <div class="breadcrumbs">
-                            <?php echo do_shortcode("[breadcrumb]"); ?>
-                        </div>
+                        <?php the_breadcrumb(); ?>
                     </div>
                 </div>
             </div>

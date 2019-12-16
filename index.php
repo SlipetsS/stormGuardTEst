@@ -15,39 +15,46 @@
 get_header();
 ?>
 
-                <div id="primary" class="content-area">
-                    <main id="main" class="site-main">
+<section class="latest-posts">
+    <div class="container">
+        <div class="row">
 
-                        <?php
-                        if (have_posts()) :
+            <?php
+            $post_args = array('post_type' => 'post', 'order' => 'ASC', 'posts_per_page' => -1);
+            $post_query = new WP_Query($post_args);
 
-                            /* Start the Loop */
-                            while (have_posts()) :
-                                the_post();
+            if ($post_query->have_posts()) :
+                while ($post_query->have_posts()) : $post_query->the_post(); ?>
 
-                                /*
-                                 * Include the Post-Type-specific template for the content.
-                                 * If you want to override this in a child theme, then include a file
-                                 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-                                 */
-                                get_template_part('template-parts/content', get_post_type());
+                    <div class="col-sm-12 col-lg-4 col-md-4">
+                        <div class="latest-posts_one">
+                            <div class="date">
+                                <?php
+                                $post_date_month = get_the_date( 'M' );
+                                $post_date_day = get_the_date( 'd' );?>
+                                <span><?php echo $post_date_month; ?></span>
+                                <span class="day"><?php  echo $post_date_day;?></span>
+                            </div>
+                            <?php  the_post_thumbnail( 'category-thumbnail', array( 'class' => 'alignleft' ) ); ?>
+                            <div class="latest-posts_text">
+                                <h6><?php echo the_title();?></h6>
+                                <p><?php echo get_excerpt(); ?></p>
+                            </div>
+                            <div class="author">BY <?php the_author(); ?></div>
+                        </div>
+                    </div>
 
-                            endwhile;
+                    <?php wp_reset_postdata(); ?>
 
-                            the_posts_navigation();
+                <?php endwhile; // ending while loop
+                ?>
+            <?php else:
+                get_template_part('template-parts/content', 'none'); ?>
+            <?php endif; // ending condition ?>
 
-                        else :
-
-                            get_template_part('template-parts/content', 'none');
-
-                        endif;
-                        ?>
-
-                    </main>
-                    <!-- #main -->
-                </div>
-                <!-- #primary -->
-
+        </div>
+    </div>
+    </section>
 <?php
 get_sidebar();
 get_footer();

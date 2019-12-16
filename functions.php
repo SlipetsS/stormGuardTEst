@@ -159,6 +159,8 @@ require get_template_directory() . '/inc/custom-header.php';
  */
 require get_template_directory() . '/inc/template-tags.php';
 
+require get_template_directory() . '/inc/breadcrumbs-function.php';
+
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
@@ -365,6 +367,10 @@ function my_taxonomies_services() {
     $args = array(
         'labels' => $labels,
         'hierarchical' => true,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'services' ),
     );
     register_taxonomy( 'services_category', 'services', $args );
 }
@@ -422,4 +428,5 @@ function wpdocs_theme_setup() {
     add_image_size( 'service-thumbnail', 84, 84, true );
     add_image_size( 'projects-thumbnail', 127, 127, true );
     add_image_size( 'category-thumbnail', 384, 244, true );
+//    add_image_size( 'post-thumbnail', 384, 244, true );
 }
