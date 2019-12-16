@@ -14,8 +14,8 @@
 	</div><!-- #content -->
 <div class="site-footer">
 <!------=OR=-------->
-<?php if ( is_front_page() ) { ?>
-
+<?php if ( is_front_page() ) : ?>
+    <!--    Footer Additional Blocks Before Copyright Start on Home Page -->
     <div class="footer-aditional main-footer">
         <div class="container">
             <div class="row">
@@ -24,7 +24,7 @@
                         <?php if (have_rows('contact_box', 'option')): ?>
                             <?php while (have_rows('contact_box', 'option')): the_row();
 
-                                // Get sub field values.
+                                // Get sub field values for contact box in footer.
                                 $title = get_sub_field('contact_title', 'option');
                                 $content = get_sub_field('contact_description', 'option');
                                 $form = get_sub_field('code_form', 'option');
@@ -44,7 +44,7 @@
                         <?php if (have_rows('past_projects_box', 'option')): ?>
                             <?php while (have_rows('past_projects_box', 'option')): the_row();
 
-                                // Get sub field values.
+                                // Get sub field values for projects box in footer.
                                 $title = get_sub_field('title', 'option');
                                 $content = get_sub_field('content', 'option');
                                 $buttonTitle = get_sub_field('button_title', 'option');
@@ -90,9 +90,9 @@
             </div>
         </div>
     </div>
-
-<?php } else { ?>
-
+    <!--    Footer Additional Blocks Before Copyright End on Home Page -->
+<?php else : ?>
+    <!--    Footer Additional Blocks Before Copyright on Start-->
     <div class="footer-aditional">
         <div class="container">
             <div class="row">
@@ -107,9 +107,7 @@
                                   ?>
 
                                 <h4><?php echo $title; ?></h4>
-                                <p>
-                                    <?php echo $content; ?>
-                                </p>
+                                <p><?php echo $content; ?> </p>
                                 <div class="btns-box">
                                     <?php if( have_rows('buttons','option') ): ?>
                                         <?php while( have_rows('buttons','option') ): the_row();
@@ -137,7 +135,7 @@
                         <?php if (have_rows('default_past_projects_box', 'option')): ?>
                             <?php while (have_rows('default_past_projects_box', 'option')): the_row();
 
-                                // Get sub field values.
+                                // Get sub field values for default projets box.
                                 $title = get_sub_field('title', 'option');
                                 $content = get_sub_field('content', 'option');
                                  ?>
@@ -179,9 +177,9 @@
             </div>
         </div>
     </div>
-
-<?php } ?>
-
+    <!--    Footer Additional Blocks Before Copyright End-->
+<?php endif; ?>
+<!--    Footer Copyright Start-->
 	<footer id="colophon">
         <div class="footer-line">
             <div class="container">
@@ -197,7 +195,8 @@
             </div>
         </div>
 
-	</footer><!-- #colophon -->
+	</footer>
+<!--    Footer Copyright End-->
 </div><!-- #page -->
 </div>
 <?php wp_footer(); ?>
