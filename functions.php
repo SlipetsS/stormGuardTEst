@@ -135,9 +135,7 @@ add_action( 'wp_enqueue_scripts', 'slick_slider_scripts_and_styles' );
 function storm_scripts() {
 	wp_enqueue_style( 'storm-style', get_stylesheet_uri() );
 
-    wp_enqueue_style( 'styles-fonts', get_stylesheet_directory_uri() . '/fonts/fonts.css', array(), '20151215', true);
-
-	wp_enqueue_script( 'storm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+    wp_enqueue_script( 'storm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'storm-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -418,3 +416,10 @@ function get_excerpt(){
     return $excerpt;
 }
 
+
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup() {
+    add_image_size( 'service-thumbnail', 84, 84, true );
+    add_image_size( 'projects-thumbnail', 127, 127, true );
+    add_image_size( 'category-thumbnail', 384, 244, true );
+}

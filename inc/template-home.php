@@ -105,7 +105,9 @@ get_header(); ?>
                             ?>
 
                             <?php if( $image ): ?>
-                                <a href="<?php echo get_term_link($term->slug, 'services_category')?>"><img src="<?php echo $image; ?>" alt=""/></a>
+                                <a href="<?php echo get_term_link($term->slug, 'services_category')?>">
+
+                                    <img src="<?php echo $image; ?>" alt=""/></a>
                             <?php endif; ?>
 
                             <?php echo '<h5>'. $sub_category->name . '</h5>';?>
@@ -149,9 +151,10 @@ get_header(); ?>
                     $link = get_sub_field('page_link_info_block');
 
                     // Use variables below ?>
+
                     <div class="col-sm-12 col-lg-4 col-md-4">
                         <div class="started-box-one">
-                            <img src="<?php echo $image; ?>" />
+                            <img src="<?php echo($image['sizes']['category-thumbnail']); ?>" />
                             <div class="started-box-one_link">
                                 <h5> <a href="<?php echo $link; ?>">
                                         <?php echo $title; ?>
@@ -189,7 +192,7 @@ get_header(); ?>
             </div>
 
             <?php
-            $post_args = array( 'post_type' => 'post','order' => 'ASC', 'posts_per_page' => 3 );
+            $post_args = array( 'post_type' => 'post','order' => 'DESC', 'posts_per_page' => 3 );
             $post_query = new WP_Query( $post_args );
 
             if ( $post_query->have_posts() ) :
@@ -204,7 +207,7 @@ get_header(); ?>
                                 <span><?php echo $post_date_month; ?></span>
                                 <span class="day"><?php  echo $post_date_day;?></span>
                             </div>
-                            <?php  the_post_thumbnail(); ?>
+                           <?php  the_post_thumbnail( 'category-thumbnail', array( 'class' => 'alignleft' ) ); ?>
                             <div class="latest-posts_text">
                                 <h6><?php echo the_title();?></h6>
                                 <p><?php echo get_excerpt(); ?></p>

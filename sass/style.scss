@@ -18,7 +18,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 @import "compass";
 @import "compass/reset";
-
+@import "fonts";
 
 
 $colorYellow : #ffdd00;
@@ -28,16 +28,17 @@ $font-family-sans-serif: "Helvetica";
 $fontFamilyTitles: 'Eurostile-Demi';
 $fontSize: 16px;
 
-
 html,
 body {
   height: 100%;
 }
+
 body {
   font-size: $fontSize;
   color: $colorBlack;
   font-family: $font-family-sans-serif;
 }
+
 .container {
   max-width: 1200px;
 }
@@ -655,13 +656,13 @@ header {
 
   .banner-text {
     background: rgba(0,0,0,0.6);
-    padding: 62px 67px 34px 22px;
+    padding: 62px 60px 34px 22px;
     display: inline-block;
 
     p {
       color: #fff;
       font-size: 34px;
-      line-height: 34px;
+      line-height: 38px;
       margin-bottom: 30px;
       font-family: $fontFamilyTitles;
 
@@ -922,11 +923,12 @@ footer {
       padding: 0;
 
     &:before {
-      font-size: 46px;
+      font-size: 16px;
       line-height: 16px;
       width: auto;
       height: auto;
       color: #fff;
+      background: #fff;
       opacity: 1;
       border: 1px solid #d8d8d8;
       border-radius: 50px;
@@ -939,6 +941,8 @@ footer {
       &:before {
         color: #000;
         opacity: 1;
+        background: #000;
+        border: 1px solid #000;
       }
 
     }
