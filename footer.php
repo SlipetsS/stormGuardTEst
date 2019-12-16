@@ -28,14 +28,10 @@
                                 $title = get_sub_field('contact_title', 'option');
                                 $content = get_sub_field('contact_description', 'option');
                                 $form = get_sub_field('code_form', 'option');
-
                                 ?>
 
                                 <h4><?php echo $title; ?></h4>
-                                <p>
-                                    <?php echo $content; ?>
-                                </p>
-
+                                <p> <?php echo $content; ?></p>
                                 <?php echo do_shortcode($form) ?>
 
                             <?php endwhile; ?>
@@ -56,12 +52,9 @@
                                 ?>
 
                                 <h4><?php echo $title; ?></h4>
-                                <p>
-                                    <?php echo $content; ?>
-                                </p>
+                                <p> <?php echo $content; ?></p>
                                 <div class="footer-projects_list">
                                     <div class="row">
-
                                         <?php
                                         $post_args = array( 'post_type' => 'projects', 'posts_per_page' => 8 );
                                         $post_query = new WP_Query( $post_args );
@@ -70,9 +63,10 @@
                                             while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
 
                                                 <div class="col-3 col-sm-3 col-lg-3 col-md-3">
-                                                    <a href="<?php echo get_permalink(); ?>"><?php  if ( has_post_thumbnail() ) {
+                                                    <a href="<?php echo get_permalink(); ?>">
+                                                        <?php  if ( has_post_thumbnail() ) :
                                                             the_post_thumbnail( 'projects-thumbnail', array( 'class' => 'alignleft' ) );
-                                                        } ?>
+                                                        endif; ?>
                                                     </a>
                                                 </div>
                                                 <?php wp_reset_postdata(); ?>
@@ -163,9 +157,10 @@
                                             while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
 
                                                 <div class="col-3 col-sm-3 col-lg-3 col-md-3">
-                                                    <a href="<?php echo get_permalink(); ?>"><?php  if ( has_post_thumbnail() ) {
+                                                    <a href="<?php echo get_permalink(); ?>">
+                                                        <?php  if ( has_post_thumbnail() ) :
                                                             the_post_thumbnail( 'projects-thumbnail', array( 'class' => 'alignleft' ) );
-                                                        } ?>
+                                                        endif; ?>
                                                     </a>
                                                 </div>
                                                 <?php wp_reset_postdata(); ?>
