@@ -138,6 +138,7 @@ function storm_scripts() {
 
     wp_enqueue_script( 'storm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
     wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', null, null, true );
+    wp_enqueue_script( 'global', get_template_directory_uri() . '/js/global.js', null, null, true );
 
 	wp_enqueue_script( 'storm-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

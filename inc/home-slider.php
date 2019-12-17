@@ -5,22 +5,6 @@
 // Create HOME Slider
 function home_slider_template() { ?>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            jQuery('#home-slider').slick({
-                cssEase: 'ease-in-out',
-                infinite: true,
-                arrows:false,
-                dots: true,
-//                autoplay: true,
-                speed: 500,
-                slidesToShow: 1,
-                slidesToScroll: 1
-            });
-
-        });
-    </script>
-
     <div class="home-slider-wrapp">
    <?php $arg = array(
         'post_type'	        => 'testimonials',
