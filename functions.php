@@ -121,7 +121,7 @@ add_action('widgets_init', 'storm_widgets_init');
  * Enqueue scripts and styles for slick slider.
  */
 function slick_slider_scripts_and_styles() {
-    if (is_page_template('page-templates/template-home.php')):
+    if (is_page_template('template-pages/template-home.php')):
         //Enqueue our slider script
         wp_enqueue_script('slick', get_template_directory_uri() . '/js/slick.min.js', null, null, true);
         //Enqueue our slider style
