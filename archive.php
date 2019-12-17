@@ -9,7 +9,6 @@
 
 get_header();
 ?>
-
 <section class="list-posts">
     <div class="container">
         <div class="row">

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive-service pages
+ * The template for displaying taxonomy-services pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -9,6 +9,50 @@
 
 get_header();
 ?>
+
+    <div class="container">
+        <div class="row">
+
+            <?php $arg = array(
+                'post_type'	    => 'services',
+                'order'		    => 'ASC',
+                'orderby'	    => 'menu_order',
+                'posts_per_page'    => -1,
+                'tax_query' => array(
+                    'relation' => 'AND',
+                    array(
+                        'taxonomy' => 'services_category',
+                        'field' => 'slug',
+                        'terms' => array( 'window', 'paint' ),
+                        'include_children' => true,
+                        'operator' => 'IN'
+                    ),
+                )
+
+            );
+            $the_query = new WP_Query( $arg );
+            if ( $the_query->have_posts() ) : ?>
+
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post();
+                        ?>
+                        <div class="col-sm-12 col-lg-12 col-md-12">
+                            <div class="content-page clearfix">
+                                <?php the_content(); ?>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+
+            <?php endif; wp_reset_query(); ?>
+
+            <div class="col-sm-12 col-lg-12">
+                <?php the_posts_pagination(array(
+                    'end_size' => 2,
+                )); ?>
+            </div>
+
+        </div>
+    </div>
+
 
     <div class="container">
         <div class="row our-services">
@@ -48,30 +92,30 @@ get_header();
                 $sub_categories = get_categories( $sub_args ); ?>
 
                 <?php foreach ( $sub_categories as $sub_category ) : ?>
-                    <div class="col-sm-12 col-lg-4 col-md-4">
-                        <div class="service-one">
+                <div class="col-sm-12 col-lg-4 col-md-4">
+                    <div class="service-one">
 
-                            <?php
-                            $term = get_term_by('slug', $sub_category->slug, 'services_category');
-                            $image = get_field('icon_category', $term);
-                            $current_term = get_term_by( 'slug', $sub_category->slug , 'services_category' );
-                            ?>
+                        <?php
+                        $term = get_term_by('slug', $sub_category->slug, 'services_category');
+                        $image = get_field('icon_category', $term);
+                        $current_term = get_term_by( 'slug', $sub_category->slug , 'services_category' );
+                        ?>
 
-                            <?php if( $image ): ?>
-                                <a href="<?php echo get_term_link($term->slug, 'services_category')?>">
-                                    <img src="<?php echo($image['sizes']['service-thumbnail']); ?>" />
-                                </a>
-                            <?php endif; ?>
-                            <h5> <?php echo $sub_category->name; ?></h5>
-                            <p><?php echo $current_term->description; ?></p>
-                        </div>
+                        <?php if( $image ): ?>
+                            <a href="<?php echo get_term_link($term->slug, 'services_category')?>">
+                                <img src="<?php echo($image['sizes']['service-thumbnail']); ?>" />
+                            </a>
+                        <?php endif; ?>
+                        <h5> <?php echo $sub_category->name; ?></h5>
+                        <p><?php echo $current_term->description; ?></p>
                     </div>
+                </div>
 
-                <?php endforeach;
+            <?php endforeach;
 
             endforeach; ?>
 
-            </div>
+        </div>
     </div>
 
     <div class="container">

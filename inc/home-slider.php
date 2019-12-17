@@ -1,7 +1,4 @@
 <?php
-// Enqueue Slick Files
-
-
 // Create HOME Slider
 function home_slider_template() { ?>
 

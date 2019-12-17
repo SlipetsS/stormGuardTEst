@@ -120,6 +120,7 @@ add_action('widgets_init', 'storm_widgets_init');
 /**
  * Enqueue scripts and styles for slick slider.
  */
+if (is_front_page()) :
 function slick_slider_scripts_and_styles() {
     if (is_page_template('template-pages/template-home.php')):
         //Enqueue our slider script
@@ -128,8 +129,8 @@ function slick_slider_scripts_and_styles() {
         wp_enqueue_style('slick', get_template_directory_uri() . '/css/slick.css', null, null);
     endif;
 }
-
 add_action('wp_enqueue_scripts', 'slick_slider_scripts_and_styles');
+endif;
 
 /**
  * Enqueue scripts and styles.
@@ -140,7 +141,10 @@ function storm_scripts() {
 
     wp_enqueue_script('storm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js',  array('jquery'), 'v4.4.1', true);
-    wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js',  array('jquery'), '1.0.0', true);
+
+    if (is_front_page()) :
+        wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js',  array('jquery'), '1.0.0', true);
+    endif;
 
     wp_enqueue_script('storm-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
@@ -424,17 +428,16 @@ function get_excerpt() {
 /**
  *  Function Cropping Images
  */
-add_action('after_setup_theme', 'wpdocs_theme_setup');
 function wpdocs_theme_setup() {
     add_image_size('service-thumbnail', 84, 84, true);
     add_image_size('projects-thumbnail', 127, 127, true);
     add_image_size('category-thumbnail', 384, 244, true);
 }
+add_action('after_setup_theme', 'wpdocs_theme_setup');
 
 /**
- *  Filter Delete Totle Pagination
+ *  Filter Delete Title from Pagination
  */
-add_filter('navigation_markup_template', 'fnc_navigation_template', 10, 2 );
 function fnc_navigation_template( $template, $class ){
 
     return '
@@ -443,3 +446,4 @@ function fnc_navigation_template( $template, $class ){
 	</nav>    
 	';
 }
+add_filter('navigation_markup_template', 'fnc_navigation_template', 10, 2 );

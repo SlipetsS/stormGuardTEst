@@ -265,9 +265,17 @@ header, footer {
   }
 }
 
+
+.archive .content-page {
+    border-bottom: 1px solid #d4d4d4;
+  img {
+    margin-right: 20px;
+  }
+}
+
 .content-page {
   padding-bottom: 50px;
-//  border-bottom: 1px solid #d4d4d4;
+
 
   img {
     margin-right: 10px;

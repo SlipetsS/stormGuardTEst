@@ -108,7 +108,7 @@
         <!--Banner Block End-->
 
         <!--Breadcrumbs Block Start-->
-        <?php if( !is_front_page() ){ ?>
+        <?php if( !is_front_page() ) : ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-lg-12 col-md-12">
@@ -118,6 +118,6 @@
                 </div>
             </div>
         </div>
-       <?php  } ?>
+       <?php  endif; ?>
         <!--Breadcrumbs Block End-->
 
