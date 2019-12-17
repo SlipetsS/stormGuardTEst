@@ -9,25 +9,19 @@
 
 ?>
 
-<div class="col-sm-12 col-lg-4 col-md-4">
-     <div class="list-posts_one">
-        <div class="date">
-            <?php
-            $post_date_month = get_the_date( 'M' );
-            $post_date_day = get_the_date( 'd' );?>
-            <span><?php echo $post_date_month; ?></span>
-            <span class="day"><?php  echo $post_date_day;?></span>
-        </div>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="entry-content">
         <?php  the_post_thumbnail( 'category-thumbnail', array( 'class' => 'alignleft' ) ); ?>
-        <div class="list-posts_text">
-            <h6><?php echo the_title();?></h6>
-            <p><?php echo get_excerpt(); ?></p>
-        </div>
-        <div class="author">BY <?php the_author(); ?></div>
+        <h6><?php echo the_title();?></h6>
+        <p><?php echo the_content(); ?></p>
+       <?php wp_link_pages(array(
+            'before' => '<div class="page-links">' . esc_html__('Pages:', 'storm'),
+            'after' => '</div>',
+        ));
+        ?>
     </div>
-</div>
 
-
+</article><!-- #post-<?php the_ID(); ?> -->
 
 
 
