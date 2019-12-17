@@ -109,6 +109,13 @@ p {
   }
 }
 
+
+header {
+  a {
+    font-weight: bold;
+  }
+}
+
 header, footer {
   ul {
     list-style: none;
@@ -133,9 +140,7 @@ header, footer {
   a {
     color: #fff;
     font-size: 16px;
-    font-family: 'Myriad Pro';
-    font-style: normal;
-    font-weight: 400;
+    font-family: $font-family-sans-serif;
     text-decoration: none;
     &:hover {
       color: $colorRed;
@@ -143,7 +148,7 @@ header, footer {
     }
   }
 }
-.current-menu-item, .current-page-ancestor {
+.current-menu-item {
   a {
     color: $colorRed;
   }
@@ -503,18 +508,21 @@ span.wpcf7-not-valid-tip {
   }
 }
 
-
-//Pagination
+//Pagination Styles
 .nav-links {
   a {
     color: $colorRed;
     text-decoration: underline;
   }
 }
-.list-posts {
+
+list-posts, .latest-posts {
   .col-sm-12 {
     margin-bottom: 30px;
   }
+}
+.list-posts {
+
   .list-posts_one {
     .list-posts_text {
       h6 {
@@ -832,8 +840,6 @@ form {
     font-weight: bold;
     padding: 25px 35px;
     width: auto;
-
-
   }
 
 }
