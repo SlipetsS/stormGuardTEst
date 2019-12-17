@@ -416,9 +416,9 @@ span.wpcf7-not-valid-tip {
 
 }
 
-//Latest Posts
 
-.latest-posts {
+//Latest Posts
+.latest-posts, .list-posts {
   padding: 35px 0 0 0;
 
   h3 {
@@ -426,11 +426,11 @@ span.wpcf7-not-valid-tip {
     text-align: center;
   }
 
-  .latest-posts_one {
+  .latest-posts_one, .list-posts_one {
     border: 1px solid #e1e1e1;
     position: relative;
     margin-bottom: 20px;
-    //height: 100%;
+    height: 100%;
 
      p {
        line-height: 26px;
@@ -469,7 +469,7 @@ span.wpcf7-not-valid-tip {
       width: 100%;
     }
 
-    .latest-posts_text {
+    .latest-posts_text, .list-posts_text {
       display: flex;
       flex-flow: column;
       padding: 15px 15px 20px 15px;
@@ -503,6 +503,28 @@ span.wpcf7-not-valid-tip {
   }
 }
 
+
+//Pagination
+.nav-links {
+  a {
+    color: $colorRed;
+    text-decoration: underline;
+  }
+}
+.list-posts {
+  .col-sm-12 {
+    margin-bottom: 30px;
+  }
+  .list-posts_one {
+    .list-posts_text {
+      h6 {
+        height: auto;
+      }
+    }
+
+  }
+
+}
 
 //Started box
 .started-box {
@@ -999,11 +1021,11 @@ footer {
 .site {
   min-height: 100%;
 }
-.site , .latest-posts_one{
+.site , .latest-posts_one, .list-posts_one {
   display: flex;
   flex-direction: column;
 }
-.site-content, .latest-posts_text {
+.site-content, .latest-posts_text ,  .list-posts_text {
   flex: 1 0 auto;
 }
 .site-footer, .author {

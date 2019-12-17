@@ -29,7 +29,6 @@
 
                 </article>
                 <!-- #post-<?php the_ID(); ?> -->
-
         </div>
     </div>
 </div>
@@ -37,7 +36,6 @@
     <div class="row our-services">
         <div class="line"></div>
         <div class="col-sm-12 col-lg-12">
-
             <div class="content-info">
                 <h3><?php echo the_field('services_box_title','option'); ?></h3>
                 <p><?php echo the_field('services_box_content','option'); ?> </p>
@@ -56,7 +54,7 @@
 
         $categories = get_categories( $args );
 
-        foreach ( $categories as $category ){
+        foreach ( $categories as $category ) :
 
 
             $sub_args = array(
@@ -71,31 +69,31 @@
 
             $sub_categories = get_categories( $sub_args ); ?>
 
-            <?php foreach ( $sub_categories as $sub_category ){ ?>
+            <?php foreach ( $sub_categories as $sub_category ) : ?>
                 <div class="col-sm-12 col-lg-4 col-md-4">
                     <div class="service-one">
 
                         <?php
                         $term = get_term_by('slug', $sub_category->slug, 'services_category');
                         $image = get_field('icon_category', $term);
-                        $current_term = get_term_by( 'slug', $sub_category->slug , 'services_category' );
+                        $current_term = get_term_by('slug', $sub_category->slug, 'services_category');
                         ?>
 
-                        <?php if( $image ): ?>
-                            <a href="<?php echo get_term_link($term->slug, 'services_category');?>"><img src="<?php echo $image; ?>" alt=""/></a>
+                        <?php if ($image): ?>
+                            <a href="<?php echo get_term_link($term->slug, 'services_category'); ?>">
+                                <img src="<?php echo($image['sizes']['service-thumbnail']); ?>"/>
+                            </a>
                         <?php endif; ?>
 
-                        <?php echo '<h5>'. $sub_category->name . '</h5>';?>
-                        <p><?php
-                            echo $current_term->description; ?>
-                        </p>
+                        <h5> <?php echo $sub_category->name; ?></h5>
+                        <p><?php echo $current_term->description; ?></p>
                     </div>
                 </div>
 
             <?php
-            }
+            endforeach;
 
-        } ?>
+        endforeach; ?>
 
         <div class="col-sm col-lg-12">
             <div class="padd-30"></div>

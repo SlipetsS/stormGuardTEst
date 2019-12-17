@@ -13,13 +13,11 @@
         <div class="col-sm-12 col-lg-12">
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <div class="entry-content">
-
-
                     <?php
-                    the_content( sprintf(
+                    the_content(sprintf(
                         wp_kses(
-                            /* translators: %s: Name of current post. Only visible to screen readers */
-                            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'storm' ),
+                        /* translators: %s: Name of current post. Only visible to screen readers */
+                            __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'storm'),
                             array(
                                 'span' => array(
                                     'class' => array(),
@@ -27,16 +25,16 @@
                             )
                         ),
                         get_the_title()
-                    ) );
+                    ));
 
-                    wp_link_pages( array(
-                        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'storm' ),
-                        'after'  => '</div>',
-                    ) );
+                    wp_link_pages(array(
+                        'before' => '<div class="page-links">' . esc_html__('Pages:', 'storm'),
+                        'after' => '</div>',
+                    ));
                     ?>
                 </div><!-- .entry-content -->
 
             </article><!-- #post-<?php the_ID(); ?> -->
-            </div>
         </div>
     </div>
+</div>

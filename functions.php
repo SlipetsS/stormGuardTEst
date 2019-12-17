@@ -430,3 +430,16 @@ function wpdocs_theme_setup() {
     add_image_size('projects-thumbnail', 127, 127, true);
     add_image_size('category-thumbnail', 384, 244, true);
 }
+
+/**
+ *  Filter Delete Totle Pagination
+ */
+add_filter('navigation_markup_template', 'fnc_navigation_template', 10, 2 );
+function fnc_navigation_template( $template, $class ){
+
+    return '
+	<nav class="navigation %1$s" role="navigation">
+		<div class="nav-links">%3$s</div>
+	</nav>    
+	';
+}

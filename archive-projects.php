@@ -5,31 +5,31 @@
  * Standard loop for the front-page
  */
 get_header(); ?>
+<section class="list-posts">
     <div class="container">
         <div class="row">
-            <?php
-            $post_args = array( 'post_type' => 'projects','order' => 'ASC', 'posts_per_page' => -1 );
-            $post_query = new WP_Query( $post_args );
+            <?php if (have_posts()) : ?>
+                <?php
+                /* Start the Loop */
+                while (have_posts()) :
+                    the_post();
 
-            if ( $post_query->have_posts() ) :
-                while ( $post_query->have_posts() ) : $post_query->the_post(); ?>
+                    get_template_part('template-parts/content', get_post_type());
 
-                    <div class="col-sm-12 col-lg-4 col-md-4">
-                        <a href="<?php echo get_permalink(); ?>"><?php  if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?></a>
-                        <h5><?php echo the_title(); ?></h5>
-                        <p><?php echo get_excerpt(); ?></p>
-                    </div>
+                endwhile; ?>
+                <div class="col-sm-12 col-lg-12">
+                    <?php the_posts_pagination(array(
+                        'end_size' => 2,
+                    )); ?>
+                </div>
 
-                    <?php wp_reset_postdata(); ?>
-
-                <?php endwhile; // ending while loop ?>
-            <?php else:  ?>
-
-                <p><?php _e( 'Sorry, no game matched your criteria.' ); ?></p>
-            <?php endif; // ending condition ?>
-
+            <?php else :
+                get_template_part('template-parts/content', 'none');
+            endif;
+            ?>
         </div>
     </div>
+</section>
 <?php
 get_sidebar();
 get_footer();

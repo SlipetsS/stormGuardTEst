@@ -93,18 +93,18 @@
 
 	<div id="content" class="site-content">
         <!--Banner Block Start-->
-            <?php if( !is_front_page() ){ ?>
-
-                <?php if ( has_post_thumbnail() ) : ?>
-                    <div class="banner-page" style="background: url('<?php the_post_thumbnail_url(); ?>') no-repeat; background-size: cover; background-position: center;">
-                        <img src="<?php the_post_thumbnail_url(); ?>" alt=""/>
-                    </div>
-                <?php else: ?>
-                    <div class="banner-page" style="background: url('<?php echo the_field('banner_image_default','option'); ?>') no-repeat;background-size: cover; background-position: center;">
-                        <img src="<?php echo the_field('banner_image_default','option'); ?>" alt=""/>
-                    </div>
-                <?php endif;
-            } ?>
+        <?php
+        if (!is_front_page() || !is_page()) : ?>
+            <div class="banner-page"
+                 style="background: url('<?php echo the_field('banner_image_default', 'option'); ?>') no-repeat;background-size: cover; background-position: center;">
+                <img src="<?php echo the_field('banner_image_default', 'option'); ?>" alt=""/>
+            </div>
+        <?php elseif (has_post_thumbnail()) : ?>
+            <div class="banner-page"
+                 style="background: url('<?php the_post_thumbnail_url(); ?>') no-repeat; background-size: cover; background-position: center;">
+                <img src="<?php the_post_thumbnail_url(); ?>" alt=""/>
+            </div>
+        <?php endif; ?>
         <!--Banner Block End-->
 
         <!--Breadcrumbs Block Start-->
