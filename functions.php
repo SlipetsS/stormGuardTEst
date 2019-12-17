@@ -123,7 +123,7 @@ add_action('widgets_init', 'storm_widgets_init');
 function slick_slider_scripts_and_styles() {
     if (is_page_template('template-pages/template-home.php')):
         //Enqueue our slider script
-        wp_enqueue_script('slick', get_template_directory_uri() . '/js/slick.min.js', null, null, true);
+        wp_enqueue_script('slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '1.5.8', true);
         //Enqueue our slider style
         wp_enqueue_style('slick', get_template_directory_uri() . '/css/slick.css', null, null);
     endif;
@@ -139,8 +139,8 @@ function storm_scripts() {
     wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', null, null);
 
     wp_enqueue_script('storm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
-    wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', null, null, true);
-    wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js', null, null, true);
+    wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js',  array('jquery'), 'v4.4.1', true);
+    wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js',  array('jquery'), '1.0.0', true);
 
     wp_enqueue_script('storm-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
