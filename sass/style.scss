@@ -133,7 +133,7 @@ header, footer {
   a {
     color: #fff;
     font-size: 16px;
-    font-family: myriad-pro, sans-serif;
+    font-family: 'Myriad Pro';
     font-style: normal;
     font-weight: 400;
     text-decoration: none;
@@ -662,8 +662,9 @@ header {
     padding: 6px 0;
     background: rgba(0,0,0,0.6);
     position: absolute;
-    left:0;
+    left: 0;
     width: 100%;
+    z-index: 10;
 
     .main-navigation {
       height: 100%;
@@ -679,16 +680,15 @@ header {
 
       }
     }
-
   }
 }
 
 //Banner Styles
 .banner-page {
   background-position: center;
+  overflow-x: hidden;
   img {
     opacity: 0;
-    //width: 100%;
   }
 }
 .banner {
@@ -835,7 +835,7 @@ form {
   p {
     margin-bottom: 24px;
     color: #fff;
-    font-family: myriad-pro, sans-serif;
+    font-family: 'Myriad Pro';
     font-weight: normal;
   }
 

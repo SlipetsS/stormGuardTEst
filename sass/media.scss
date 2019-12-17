@@ -1,6 +1,10 @@
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
 
-
+  @media (min-width: 768px) {
+    .latest-posts_text {
+      flex-flow: row nowrap;
+    }
+  }
 
 
 } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */

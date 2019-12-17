@@ -1,62 +1,1135 @@
-/*
-Error: File to import not found or unreadable: fonts.
-       Load paths:
-         Compass::SpriteImporter
-         C:/xampp/htdocs/wp/wp-content/themes/storm/sass
-         C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets
-        on line 21 of C:/xampp/htdocs/wp/wp-content/themes/storm/sass/style.scss
-
-16: Normalizing styles have been helped along thanks to the fine work of
-17: Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-18: *\/
-19: @import "compass";
-20: @import "compass/reset";
-21: @import "fonts";
-22: 
-23: 
-24: $colorYellow : #ffdd00;
-25: $colorRed: #db302c;
-26: $colorBlack: #000000;
-
-Backtrace:
-C:/xampp/htdocs/wp/wp-content/themes/storm/sass/style.scss:21
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/import_node.rb:67:in `rescue in import'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/import_node.rb:44:in `import'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/import_node.rb:28:in `imported_file'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/import_node.rb:37:in `css_import?'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:161:in `visit'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:20:in `render'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/engine.rb:284:in `render'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:331:in `block in watch'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/sass-3.4.25/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+/*!
+Theme Name: Storm Theme
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: custom-theme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+Custom Theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: fonts.\A        Load paths:\A          Compass::SpriteImporter\A          C:/xampp/htdocs/wp/wp-content/themes/storm/sass\A          C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets\A         on line 21 of C:/xampp/htdocs/wp/wp-content/themes/storm/sass/style.scss\A \A 16: Normalizing styles have been helped along thanks to the fine work of\A 17: Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/\A 18: */\A 19: @import \"compass\";\A 20: @import \"compass/reset\";\A 21: @import \"fonts\";\A 22: \A 23: \A 24: $colorYellow : #ffdd00;\A 25: $colorRed: #db302c;\A 26: $colorBlack: #000000;"; }
+/* line 5, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* Icons */
+@font-face {
+  font-family: 'Eurostile-Demi';
+  font-weight: normal;
+  font-style: normal;
+  src: url("fonts/Eurostile-Demi.eot");
+  src: url("fonts/Eurostile-Demi.eot?#iefix") format("embedded-opentype"), url("fonts/Eurostile-Demi.woff") format("woff"), url("fonts/Eurostile-Demi.ttf") format("truetype"), url("fonts/Eurostile-Demi.svg#slick") format("svg");
+}
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url("fonts/MyriadPro-Regular.eot");
+  src: local("fonts/Myriad Pro Regular"), local("MyriadPro-Regular"), url("fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/MyriadPro-Regular.woff") format("woff"), url("fonts/MyriadPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 31, sass/style.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 36, sass/style.scss */
+body {
+  font-size: 16px;
+  color: #000000;
+  font-family: "Helvetica";
+}
+
+/* line 42, sass/style.scss */
+.container {
+  max-width: 1200px;
+}
+
+/* line 46, sass/style.scss */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 51, sass/style.scss */
+.btn {
+  border-radius: 0;
+}
+
+/* line 55, sass/style.scss */
+h3 {
+  color: #db302c;
+  font-size: 32px;
+  margin-bottom: 7px;
+  font-family: "Eurostile-Demi";
+}
+
+/* line 62, sass/style.scss */
+h2 {
+  color: #000000;
+  font-size: 38px;
+  font-family: "Eurostile-Demi";
+}
+
+/* line 68, sass/style.scss */
+h5 {
+  font-size: 20px;
+  font-family: "Eurostile-Demi";
+  color: #000000;
+}
+
+/* line 74, sass/style.scss */
+h4 {
+  color: #fff;
+  font-size: 32px;
+  font-family: "Eurostile-Demi";
+  margin-bottom: 30px;
+}
+
+/* line 81, sass/style.scss */
+p {
+  color: #000000;
+  font-family: "Helvetica";
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 25px;
+}
+/* line 87, sass/style.scss */
+p a {
+  color: #db302c;
+}
+
+/* line 93, sass/style.scss */
+.btn-yellow {
+  color: #000000;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ffdd00;
+  padding: 15px 37px;
+  display: inline-block;
+  font-family: "Helvetica";
+  transition: all 2s;
+}
+/* line 105, sass/style.scss */
+.btn-yellow:hover {
+  text-decoration: none;
+  color: #000000;
+  box-shadow: 1px 2px 13px rgba(0, 0, 0, 0.4);
+}
+
+/* line 113, sass/style.scss */
+header ul, footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+/* line 119, sass/style.scss */
+header ul li, footer ul li {
+  padding: 0 10px;
+  align-content: flex-end;
+  align-items: flex-end;
+}
+/* line 124, sass/style.scss */
+header ul li a, footer ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 133, sass/style.scss */
+header a, footer a {
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Myriad Pro';
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+}
+/* line 140, sass/style.scss */
+header a:hover, footer a:hover {
+  color: #db302c;
+  text-decoration: none;
+}
+
+/* line 147, sass/style.scss */
+.current-menu-item a, .current-page-ancestor a {
+  color: #db302c;
+}
+
+/* line 153, sass/style.scss */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 160, sass/style.scss */
+.breadcrumbs {
+  border-bottom: 1px solid #d4d4d4;
+  padding: 20px 0;
+  margin-bottom: 18px;
+}
+/* line 165, sass/style.scss */
+.breadcrumbs a {
+  text-decoration: underline;
+  color: #db302c !important;
+  text-transform: capitalize;
+}
+/* line 170, sass/style.scss */
+.breadcrumbs a:hover {
+  text-decoration: none;
+}
+/* line 176, sass/style.scss */
+.breadcrumbs span {
+  margin: 0 11px;
+}
+/* line 181, sass/style.scss */
+.breadcrumbs .breadcrumb-container {
+  padding: 0;
+  margin: 0;
+}
+/* line 187, sass/style.scss */
+.breadcrumbs .breadcrumb-container.theme1 ul {
+  justify-content: flex-start;
+}
+/* line 190, sass/style.scss */
+.breadcrumbs .breadcrumb-container.theme1 ul li {
+  position: relative;
+  align-content: flex-start;
+  align-items: flex-start;
+  padding: 0 11px;
+}
+/* line 196, sass/style.scss */
+.breadcrumbs .breadcrumb-container.theme1 ul li span {
+  text-decoration: underline;
+  color: #db302c !important;
+  text-transform: capitalize;
+}
+/* line 202, sass/style.scss */
+.breadcrumbs .breadcrumb-container.theme1 ul li .separator {
+  display: none;
+}
+/* line 206, sass/style.scss */
+.breadcrumbs .breadcrumb-container.theme1 ul li a {
+  font-size: 14px;
+  font-family: "Helvetica";
+  background: transparent !important;
+}
+/* line 211, sass/style.scss */
+.breadcrumbs .breadcrumb-container.theme1 ul li a:hover {
+  text-decoration: none;
+}
+/* line 218, sass/style.scss */
+.breadcrumbs .breadcrumb-container.theme1 ul li a[href^="#"] span {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+/* line 224, sass/style.scss */
+.breadcrumbs .breadcrumb-container.theme1 ul li:after {
+  content: ">";
+  position: absolute;
+  right: -5px;
+  top: 20%;
+  color: #000000;
+  font-size: 14px;
+  font-family: "Helvetica";
+}
+/* line 234, sass/style.scss */
+.breadcrumbs .breadcrumb-container.theme1 ul li:last-child:after {
+  display: none;
+}
+/* line 237, sass/style.scss */
+.breadcrumbs .breadcrumb-container.theme1 ul li:first-child {
+  padding-left: 0;
+}
+/* line 241, sass/style.scss */
+.breadcrumbs .breadcrumb-container.theme1 ul li span {
+  font-size: 14px;
+  font-family: "Helvetica";
+  color: #000000;
+}
+
+/* line 257, sass/style.scss */
+.content img {
+  float: right;
+  margin-left: 20px;
+}
+
+/* line 263, sass/style.scss */
+.content-page {
+  padding-bottom: 50px;
+}
+/* line 267, sass/style.scss */
+.content-page img {
+  margin-right: 10px;
+}
+
+/* line 272, sass/style.scss */
+div.wpcf7-response-output {
+  padding: 8px;
+}
+
+/* line 275, sass/style.scss */
+span.wpcf7-not-valid-tip {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* line 281, sass/style.scss */
+.post-thumbnail img {
+  width: 100%;
+}
+
+/* line 289, sass/style.scss */
+.franchise-box, .franchise-box-find {
+  background-color: #ffdd00;
+  padding: 30px 0;
+}
+/* line 293, sass/style.scss */
+.franchise-box p, .franchise-box-find p {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+/* line 298, sass/style.scss */
+.franchise-box .franchise-box__right, .franchise-box-find .franchise-box__right {
+  display: flex;
+  justify-content: flex-end;
+}
+/* line 302, sass/style.scss */
+.franchise-box .franchise-box__right .btn, .franchise-box-find .franchise-box__right .btn {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #db302c;
+  padding: 15px 37px;
+}
+
+/* line 317, sass/style.scss */
+.single .entry-content a {
+  float: left;
+  margin-right: 20px;
+}
+
+/* line 326, sass/style.scss */
+.content-info {
+  max-width: 440px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+/* line 330, sass/style.scss */
+.content-info p {
+  margin-bottom: 0;
+}
+
+/* line 337, sass/style.scss */
+.latest-posts .btns-box, .our-services .btns-box {
+  clear: both;
+  padding: 15px 0 35px 0;
+  text-align: center;
+}
+
+/* line 344, sass/style.scss */
+.padd-30 {
+  padding-bottom: 30px;
+}
+
+/* line 348, sass/style.scss */
+.line {
+  border-bottom: 1px solid #d4d4d4;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 356, sass/style.scss */
+.alignleft {
+  float: left;
+  margin-right: 20px;
+}
+
+/* line 360, sass/style.scss */
+.our-services {
+  text-align: center;
+  padding-top: 35px;
+  position: relative;
+}
+/* line 366, sass/style.scss */
+.our-services h5 {
+  margin-bottom: 12px;
+}
+/* line 370, sass/style.scss */
+.our-services p {
+  margin-bottom: 0;
+}
+/* line 374, sass/style.scss */
+.our-services .service-one {
+  margin-bottom: 30px;
+}
+/* line 377, sass/style.scss */
+.our-services .service-one img {
+  margin-bottom: 6px;
+  border-radius: 100px;
+}
+
+/* line 386, sass/style.scss */
+.testimonials {
+  background: #f7f8f8;
+  padding: 53px 0;
+}
+/* line 390, sass/style.scss */
+.testimonials h3 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+/* line 395, sass/style.scss */
+.testimonials .testimonials-one span {
+  text-align: right;
+  font-size: 14px;
+  color: #000000;
+  font-style: oblique;
+  display: block;
+  margin-bottom: 7px;
+}
+/* line 404, sass/style.scss */
+.testimonials .testimonials-one_content {
+  background: #fff;
+  padding: 25px 13px;
+  margin-bottom: 10px;
+}
+/* line 410, sass/style.scss */
+.testimonials p {
+  color: #000000;
+  font-size: 20px;
+  line-height: 26px;
+  font-style: oblique;
+}
+
+/* line 421, sass/style.scss */
+.latest-posts {
+  padding: 35px 0 0 0;
+}
+/* line 424, sass/style.scss */
+.latest-posts h3 {
+  margin-bottom: 28px;
+  text-align: center;
+}
+/* line 429, sass/style.scss */
+.latest-posts .latest-posts_one {
+  border: 1px solid #e1e1e1;
+  position: relative;
+  margin-bottom: 20px;
+}
+/* line 435, sass/style.scss */
+.latest-posts .latest-posts_one p {
+  line-height: 26px;
+  margin-bottom: 0;
+}
+/* line 440, sass/style.scss */
+.latest-posts .latest-posts_one .date {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  background: #ffdd00;
+}
+/* line 447, sass/style.scss */
+.latest-posts .latest-posts_one .date span {
+  color: #000000;
+  display: block;
+  text-align: center;
+}
+/* line 453, sass/style.scss */
+.latest-posts .latest-posts_one .date .day {
+  font-weight: bold;
+  padding-top: 4px;
+}
+/* line 459, sass/style.scss */
+.latest-posts .latest-posts_one .author {
+  padding: 15px;
+  border-top: 1px solid #e1e1e1;
+  font-family: "Helvetica";
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+/* line 468, sass/style.scss */
+.latest-posts .latest-posts_one img {
+  width: 100%;
+}
+/* line 472, sass/style.scss */
+.latest-posts .latest-posts_one .latest-posts_text {
+  display: flex;
+  flex-flow: column;
+  padding: 15px 15px 20px 15px;
+  clear: both;
+}
+/* line 478, sass/style.scss */
+.latest-posts .latest-posts_one .latest-posts_text h6 {
+  font-size: 26px;
+  font-family: "Eurostile-Demi";
+  color: #000000;
+  margin-bottom: 12px;
+  width: 60%;
+  height: 3em;
+  overflow: hidden;
+}
+/* line 490, sass/style.scss */
+.latest-posts .latest-posts_one .latest-posts_text p a {
+  color: #db302c;
+  font-size: 16px;
+  text-decoration: underline;
+}
+/* line 495, sass/style.scss */
+.latest-posts .latest-posts_one .latest-posts_text p a:hover {
+  text-decoration: none;
+}
+
+/* line 508, sass/style.scss */
+.started-box {
+  margin-bottom: 35px;
+  padding-top: 35px;
+  border-top: 1px solid #d4d4d4;
+}
+/* line 513, sass/style.scss */
+.started-box .started-box-one {
+  position: relative;
+}
+/* line 516, sass/style.scss */
+.started-box .started-box-one img {
+  width: 100%;
+}
+/* line 519, sass/style.scss */
+.started-box .started-box-one .started-box-one_link {
+  background: #ffdd00;
+  padding: 15px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* line 528, sass/style.scss */
+.started-box .started-box-one .started-box-one_link a {
+  color: #000000;
+  font-family: "Eurostile-Demi";
+  position: relative;
+}
+/* line 533, sass/style.scss */
+.started-box .started-box-one .started-box-one_link a:after {
+  content: ">";
+  position: absolute;
+  right: -25px;
+  top: 25%;
+  color: #000000;
+  font-size: 14px;
+  font-family: "Eurostile-Demi";
+}
+
+/* line 552, sass/style.scss */
+.franchise-box-find p {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+/* line 557, sass/style.scss */
+.franchise-box-find .franchise-box__left_find {
+  position: relative;
+  padding-left: 63px;
+  margin-left: 43px;
+}
+/* line 562, sass/style.scss */
+.franchise-box-find .franchise-box__left_find:before {
+  background: url("./images/map-icon.png") no-repeat left top;
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 56px;
+  width: 38px;
+  display: block;
+}
+/* line 575, sass/style.scss */
+.franchise-box-find .franchise-box__right_form {
+  margin-right: 43px;
+}
+/* line 578, sass/style.scss */
+.franchise-box-find .franchise-box__right_form .btn {
+  display: flex;
+}
+/* line 582, sass/style.scss */
+.franchise-box-find .franchise-box__right_form .btn, .franchise-box-find .franchise-box__right_form input[type=submit] {
+  background-color: #db302c;
+  padding: 16px 30px;
+  color: #fff;
+  margin-bottom: 0;
+}
+/* line 589, sass/style.scss */
+.franchise-box-find .franchise-box__right_form form {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+/* line 594, sass/style.scss */
+.franchise-box-find .franchise-box__right_form form * {
+  display: flex;
+}
+/* line 597, sass/style.scss */
+.franchise-box-find .franchise-box__right_form form .wpcf7-display-none {
+  display: none;
+}
+/* line 601, sass/style.scss */
+.franchise-box-find .franchise-box__right_form form span.wpcf7-not-valid-tip {
+  position: absolute;
+  bottom: -35px;
+  color: #fff;
+}
+/* line 607, sass/style.scss */
+.franchise-box-find .franchise-box__right_form form div.wpcf7-response-output {
+  position: absolute;
+  top: -49px;
+  padding: 5px;
+  margin: 0;
+  background: #fff;
+}
+/* line 615, sass/style.scss */
+.franchise-box-find .franchise-box__right_form form .wpcf7-form-control-wrap {
+  width: 65%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+/* line 622, sass/style.scss */
+.franchise-box-find .franchise-box__right_form form .ajax-loader {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
+/* line 628, sass/style.scss */
+.franchise-box-find .franchise-box__right_form form input[type=text] {
+  margin-right: 20px;
+  border: 1px solid #b7b7b7;
+  padding: 17px 13px;
+  margin-bottom: 0;
+}
+/* line 634, sass/style.scss */
+.franchise-box-find .franchise-box__right_form form input[type=submit] {
+  width: 35%;
+}
+
+/* line 644, sass/style.scss */
+header {
+  position: relative;
+}
+/* line 647, sass/style.scss */
+header .top-header-box {
+  background: #000;
+  padding: 16px 0;
+}
+/* line 651, sass/style.scss */
+header .top-header-box .custom-menu {
+  text-align: right;
+}
+/* line 655, sass/style.scss */
+header .top-header-box .custom-line a {
+  color: #ffdd00;
+}
+/* line 661, sass/style.scss */
+header .site-info {
+  padding: 6px 0;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+/* line 669, sass/style.scss */
+header .site-info .main-navigation {
+  height: 100%;
+}
+/* line 672, sass/style.scss */
+header .site-info .main-navigation * {
+  height: 100%;
+}
+/* line 676, sass/style.scss */
+header .site-info .main-navigation .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+/* line 687, sass/style.scss */
+.banner-page {
+  background-position: center;
+  overflow-x: hidden;
+}
+/* line 690, sass/style.scss */
+.banner-page img {
+  opacity: 0;
+}
+
+/* line 694, sass/style.scss */
+.banner {
+  padding: 163px 0  112px 0;
+  background-size: cover;
+}
+/* line 698, sass/style.scss */
+.banner .banner-text {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 62px 60px 34px 22px;
+  display: inline-block;
+}
+/* line 703, sass/style.scss */
+.banner .banner-text p {
+  color: #fff;
+  font-size: 34px;
+  line-height: 38px;
+  margin-bottom: 30px;
+  font-family: "Eurostile-Demi";
+}
+/* line 710, sass/style.scss */
+.banner .banner-text p strong {
+  color: #ffdd00;
+}
+/* line 716, sass/style.scss */
+.banner .btn {
+  background: #ffdd00;
+  padding: 26px 24px;
+  color: #000;
+  font-size: 16px;
+  border-radius: 0;
+  font-family: "Helvetica";
+  font-weight: bold;
+}
+/* line 725, sass/style.scss */
+.banner .btn span {
+  color: #000;
+  padding-left: 20px;
+}
+
+/* line 737, sass/style.scss */
+form .form-line {
+  display: flex;
+  flex-direction: row;
+}
+/* line 741, sass/style.scss */
+form .form-line .wpcf7-form-control-wrap {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+}
+/* line 747, sass/style.scss */
+form .form-line .wpcf7-form-control-wrap:first-child {
+  margin-left: 0;
+}
+/* line 755, sass/style.scss */
+form .form-line-btn {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+/* line 760, sass/style.scss */
+form .form-line-btn .ajax-loader {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+}
+/* line 766, sass/style.scss */
+form .form-line-btn input {
+  align-content: flex-end;
+  align-items: flex-end;
+}
+/* line 772, sass/style.scss */
+form input, form select, form textarea {
+  border: 0;
+  background: #fff;
+  padding: 14px 13px;
+  margin-bottom: 24px;
+  width: 100%;
+  font-family: "Eurostile-Demi";
+}
+/* line 780, sass/style.scss */
+form input:focus, form select:focus, form textarea:focus {
+  border: none;
+}
+/* line 784, sass/style.scss */
+form select {
+  color: #000;
+  width: 100%;
+  background: white url("images/arrow-drop.png") no-repeat 98% center;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: "";
+}
+/* line 794, sass/style.scss */
+form textarea {
+  margin-bottom: 14px;
+  min-height: 175px;
+  resize: none;
+}
+/* line 799, sass/style.scss */
+form input::placeholder,
+form textarea::placeholder {
+  color: #ababab;
+  font-style: italic;
+  font-family: "Helvetica";
+  font-size: 16px;
+}
+/* line 806, sass/style.scss */
+form input[type=submit] {
+  background: #fff;
+  color: #db302c;
+  font-family: "Helvetica";
+  font-weight: bold;
+  padding: 25px 35px;
+  width: auto;
+}
+
+/* line 822, sass/style.scss */
+.footer-aditional {
+  background: #db302c;
+  padding: 39px 0 30px 0;
+  border-top: 5px solid #fff;
+}
+/* line 827, sass/style.scss */
+.footer-aditional h4 {
+  margin-bottom: 25px;
+}
+/* line 831, sass/style.scss */
+.footer-aditional .footer-contact {
+  padding-right: 20px;
+}
+/* line 835, sass/style.scss */
+.footer-aditional p {
+  margin-bottom: 24px;
+  color: #fff;
+  font-family: 'Myriad Pro';
+  font-weight: normal;
+}
+/* line 842, sass/style.scss */
+.footer-aditional .footer-projects {
+  position: relative;
+  padding-left: 20px;
+}
+/* line 846, sass/style.scss */
+.footer-aditional .footer-projects:before {
+  content: "";
+  height: 100%;
+  border-left: 1px solid #e6534f;
+  width: 2px;
+  background: #bb2723;
+  position: absolute;
+  left: -15px;
+  top: 0;
+  display: block;
+}
+/* line 858, sass/style.scss */
+.footer-aditional .footer-projects img {
+  border: 1px solid #fff;
+  width: 100%;
+  height: auto;
+  margin: 0 0 26px 0;
+}
+/* line 866, sass/style.scss */
+.footer-aditional .footer-projects p a {
+  color: #fff;
+  text-decoration: underline;
+}
+/* line 869, sass/style.scss */
+.footer-aditional .footer-projects p a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+/* line 877, sass/style.scss */
+.footer-aditional .footer-projects .form-line-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 882, sass/style.scss */
+.footer-aditional .footer-projects .form-line-btn .btn-white {
+  background: #fff;
+  color: #db302c;
+  font-family: "Helvetica";
+  font-weight: bold;
+  padding: 25px 35px;
+  display: flex;
+  align-items: baseline;
+  align-self: center;
+  transition: all 2s;
+}
+/* line 893, sass/style.scss */
+.footer-aditional .footer-projects .form-line-btn .btn-white:hover {
+  text-decoration: none;
+  box-shadow: 1px 2px 13px rgba(0, 0, 0, 0.4);
+}
+/* line 905, sass/style.scss */
+.footer-aditional .btns-box .btn-white {
+  max-width: 388px;
+  margin-bottom: 35px;
+  background: #fff;
+  color: #db302c;
+  font-family: "Helvetica";
+  font-weight: bold;
+  padding: 25px 29px;
+  display: flex;
+  align-items: baseline;
+  align-self: center;
+  transition: all 2s;
+}
+/* line 918, sass/style.scss */
+.footer-aditional .btns-box .btn-white:hover {
+  text-decoration: none;
+  box-shadow: 1px 2px 13px rgba(0, 0, 0, 0.4);
+}
+
+/* line 929, sass/style.scss */
+.main-footer.footer-aditional .footer-projects:before {
+  display: none;
+}
+
+/* line 937, sass/style.scss */
+footer .footer-line {
+  background: #000;
+  padding: 15px 0;
+}
+/* line 941, sass/style.scss */
+footer .footer-line p {
+  color: #fff;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+/* line 947, sass/style.scss */
+footer .footer-line a {
+  text-decoration: underline;
+  color: #fff;
+  font-size: 12px;
+  padding: 0 7px;
+}
+/* line 953, sass/style.scss */
+footer .footer-line a:hover {
+  text-decoration: none;
+}
+
+/* line 967, sass/style.scss */
+.slick-dots li button {
+  padding: 0;
+}
+/* line 970, sass/style.scss */
+.slick-dots li button:before {
+  font-size: 16px;
+  line-height: 16px;
+  width: auto;
+  height: auto;
+  color: #fff;
+  background: #fff;
+  opacity: 1;
+  border: 1px solid #d8d8d8;
+  border-radius: 50px;
+}
+/* line 986, sass/style.scss */
+.slick-dots .slick-active button:before {
+  color: #000;
+  opacity: 1;
+  background: #000;
+  border: 1px solid #000;
+}
+
+/* line 999, sass/style.scss */
+.site {
+  min-height: 100%;
+}
+
+/* line 1002, sass/style.scss */
+.site, .latest-posts_one {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 1006, sass/style.scss */
+.site-content, .latest-posts_text {
+  flex: 1 0 auto;
+}
+
+/* line 1009, sass/style.scss */
+.site-footer, .author {
+  flex: 0 0 auto;
+}
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) and (min-width: 768px) {
+  /* line 4, sass/media.scss */
+  .latest-posts_text {
+    flex-flow: row nowrap;
+  }
+}
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+@media only screen and (max-width: 64em) {
+  /* line 13, sass/media.scss */
+  footer .footer-line {
+    margin-bottom: 10px;
+  }
+  /* line 15, sass/media.scss */
+  footer .footer-line p {
+    text-align: center;
+  }
+  /* line 19, sass/media.scss */
+  footer ul {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+  /* line 23, sass/media.scss */
+  footer ul li {
+    display: inline-block;
+  }
+}
+@media only screen and (max-width: 40em) {
+  /* line 32, sass/media.scss */
+  .started-box-one {
+    margin-bottom: 20px;
+  }
+
+  /* line 35, sass/media.scss */
+  .franchise-box__right_form {
+    margin-left: 43px;
+    margin-top: 20px;
+  }
+
+  /* line 40, sass/media.scss */
+  .franchise-box__left_find {
+    margin-right: 43px;
+  }
+
+  /* line 44, sass/media.scss */
+  .custom-line {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* line 49, sass/media.scss */
+  .site-branding {
+    text-align: center;
+  }
+
+  /* line 54, sass/media.scss */
+  .custom-menu ul {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+  /* line 59, sass/media.scss */
+  .custom-menu ul li {
+    display: inline-block;
+  }
+
+  /* line 66, sass/media.scss */
+  .content-page img {
+    margin-bottom: 20px;
+  }
+
+  /* line 75, sass/media.scss */
+  header .site-info .main-navigation .menu {
+    display: inline-block;
+  }
+  /* line 78, sass/media.scss */
+  header .site-info .main-navigation .menu li {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  /* line 84, sass/media.scss */
+  header .site-info .main-navigation * {
+    height: auto;
+  }
+
+  /* line 90, sass/media.scss */
+  .banner-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  /* line 94, sass/media.scss */
+  .banner-page img {
+    width: auto;
+    margin: 0;
+  }
+
+  /* line 99, sass/media.scss */
+  .alignleft {
+    float: none;
+    height: auto;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+}
