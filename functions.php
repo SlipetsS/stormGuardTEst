@@ -148,8 +148,9 @@ function storm_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'storm_scripts' );
 
-
-// Run Sick slider on HOME page
+/**
+ * Run Sick slider on HOME page
+ */
 include_once(TEMPLATEPATH . '/inc/home-slider.php');
 
 /**
@@ -181,13 +182,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-// Create New Blocks
+/**
+ * Function for New Blocks ACF
+ */
 add_action('acf/init', 'my_acf_init');
 function my_acf_init() {
 
     // check function exists
     if( function_exists('acf_register_block') ) {
-
 
         acf_register_block(array(
             'name'				=> 'banner',
@@ -209,25 +211,19 @@ function my_acf_init() {
             'keywords'			=> array( 'get-started', 'quote' ),
         ));
 
-
     }
 }
 
 
 function my_acf_block_render_callback( $block ) {
-
-    // convert name ("acf/testimonial") into path friendly slug ("testimonial")
     $slug = str_replace('acf/', '', $block['name']);
-
     // include a template part from within the "template-parts/block" folder
     if( file_exists( get_theme_file_path("/template-parts/block/content-{$slug}.php") ) ) {
         include( get_theme_file_path("/template-parts/block/content-{$slug}.php") );
     }
 }
 
-
 if( function_exists('acf_add_options_page') ) {
-
     acf_add_options_page(array(
         'page_title' 	=> 'Theme General Settings',
         'menu_title'	=> 'Theme Settings',
@@ -235,38 +231,31 @@ if( function_exists('acf_add_options_page') ) {
         'capability'	=> 'edit_posts',
         'redirect'		=> false
     ));
-
     acf_add_options_sub_page(array(
         'page_title' 	=> 'Theme Header Settings',
         'menu_title'	=> 'Header',
         'parent_slug'	=> 'theme-general-settings',
     ));
-
     acf_add_options_sub_page(array(
         'page_title' 	=> 'Theme Default Settings',
         'menu_title'	=> 'Default',
         'parent_slug'	=> 'theme-general-settings',
     ));
-
     acf_add_options_sub_page(array(
         'page_title' 	=> 'Theme Footer Home Page Settings',
         'menu_title'	=> 'Footer Home Page',
         'parent_slug'	=> 'theme-general-settings',
     ));
-
     acf_add_options_sub_page(array(
         'page_title' 	=> 'Theme Footer Default Page Settings',
         'menu_title'	=> 'Footer Default Page',
         'parent_slug'	=> 'theme-general-settings',
     ));
-
     acf_add_options_sub_page(array(
         'page_title' 	=> 'Theme Find Franchise Settings',
         'menu_title'	=> 'Find Franchise',
         'parent_slug'	=> 'theme-general-settings',
     ));
-
-
     acf_add_options_sub_page(array(
         'page_title' 	=> 'Theme Get Started Settings',
         'menu_title'	=> 'Get Started',
@@ -283,7 +272,6 @@ if( function_exists('acf_add_options_page') ) {
         'menu_title'	=> 'Testimonials',
         'parent_slug'	=> 'theme-general-settings',
     ));
-
     acf_add_options_sub_page(array(
         'page_title' 	=> 'Theme Service Info Settings',
         'menu_title'	=> 'Service Info',
@@ -291,7 +279,9 @@ if( function_exists('acf_add_options_page') ) {
     ));
 }
 
-// Post Type Projects
+/**
+ * Post Type Projects
+ */
 function easytuts_projects_post() {
     $labels = array(
         'name'               => _x( 'Projects', 'post type general name' ),
@@ -320,8 +310,9 @@ function easytuts_projects_post() {
 }
 add_action( 'init', 'easytuts_projects_post' );
 
-
-// Post Type Services
+/**
+ * Creating Post Type Services
+ */
 function easytuts_services_post() {
     $labels = array(
         'name'               => _x( 'Residential', 'post type general name' ),
@@ -350,9 +341,6 @@ function easytuts_services_post() {
 }
 add_action( 'init', 'easytuts_services_post' );
 
-
-
-
 function my_taxonomies_services() {
     $labels = array(
         'name'              => _x( 'Service Categories', 'taxonomy general name' ),
@@ -379,11 +367,9 @@ function my_taxonomies_services() {
 }
 add_action( 'init', 'my_taxonomies_services', 0 );
 
-
-
-
-
-// Post Type Testimonials
+/**
+ * Creating Post Type Testimonials
+ */
 function easytuts_testimonials_post() {
     $labels = array(
         'name'               => _x( 'Testimonials', 'post type general name' ),
@@ -412,7 +398,9 @@ function easytuts_testimonials_post() {
 }
 add_action( 'init', 'easytuts_testimonials_post' );
 
-// Custom Excerpt
+/**
+ *  Function Custom Excerpt
+ */
 function get_excerpt(){
     $excerpt = get_the_content();
     $excerpt = preg_replace(" ([.*?])",'',$excerpt);
@@ -424,12 +412,12 @@ function get_excerpt(){
     $excerpt = $excerpt.'. <a href="'.get_the_permalink().'">Read More</a>';
     return $excerpt;
 }
-
-
+/**
+ *  Function Cropping Images
+ */
 add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
 function wpdocs_theme_setup() {
     add_image_size( 'service-thumbnail', 84, 84, true );
     add_image_size( 'projects-thumbnail', 127, 127, true );
     add_image_size( 'category-thumbnail', 384, 244, true );
-//    add_image_size( 'post-thumbnail', 384, 244, true );
 }
