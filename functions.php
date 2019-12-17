@@ -192,8 +192,8 @@ if (defined('JETPACK__VERSION')) {
 /**
  * Function for New Blocks ACF
  */
-add_action('acf/init', 'my_acf_init');
-function my_acf_init() {
+add_action('acf/init', 'fnc_acf_init');
+function fnc_acf_init() {
 
     // check function exists
     if (function_exists('acf_register_block')) {
@@ -202,7 +202,7 @@ function my_acf_init() {
             'name' => 'banner',
             'title' => __('Banner Home'),
             'description' => __('A custom banner home block.'),
-            'render_callback' => 'my_acf_block_render_callback',
+            'render_callback' => 'fnc_acf_block_render_callback',
             'category' => 'formatting',
             'icon' => 'admin-comments',
             'keywords' => array('banner', 'quote'),
@@ -212,7 +212,7 @@ function my_acf_init() {
             'name' => 'get started',
             'title' => __('Get Started'),
             'description' => __('A custom Get Started block.'),
-            'render_callback' => 'my_acf_block_render_callback',
+            'render_callback' => 'fnc_acf_block_render_callback',
             'category' => 'formatting',
             'icon' => 'admin-comments',
             'keywords' => array('get-started', 'quote'),
@@ -220,7 +220,7 @@ function my_acf_init() {
     }
 }
 
-function my_acf_block_render_callback($block) {
+function fnc_acf_block_render_callback($block) {
     $slug = str_replace('acf/', '', $block['name']);
     // include a template part from within the "template-parts/block" folder
     if (file_exists(get_theme_file_path("/template-parts/block/content-{$slug}.php"))) {
