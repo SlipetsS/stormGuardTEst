@@ -7,7 +7,6 @@
 get_header(); ?>
     <div class="container">
         <div class="row">
-
             <?php
             $post_args = array( 'post_type' => 'projects','order' => 'ASC', 'posts_per_page' => -1 );
             $post_query = new WP_Query( $post_args );

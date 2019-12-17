@@ -78,8 +78,7 @@ get_header(); ?>
 
             $categories = get_categories( $args );
 
-            foreach ( $categories as $category ){
-
+            foreach ( $categories as $category ) :
 
                 $sub_args = array(
                     'taxonomy' => 'services_category',
@@ -93,7 +92,7 @@ get_header(); ?>
 
                 $sub_categories = get_categories( $sub_args ); ?>
 
-                <?php foreach ( $sub_categories as $sub_category ){ ?>
+                <?php foreach ( $sub_categories as $sub_category ) : ?>
                     <div class="col-sm-12 col-lg-4 col-md-4">
                         <div class="service-one">
 
@@ -105,27 +104,23 @@ get_header(); ?>
 
                             <?php if( $image ): ?>
                                 <a href="<?php echo get_term_link($term->slug, 'services_category')?>">
-
                                     <img src="<?php echo($image['sizes']['service-thumbnail']); ?>" />
                                 </a>
                             <?php endif; ?>
 
-                            <?php echo '<h5>'. $sub_category->name . '</h5>';?>
-                            <p><?php
-                                echo $current_term->description; ?>
-                            </p>
+                            <h5> <?php echo $sub_category->name; ?></h5>
+                            <p><?php echo $current_term->description; ?></p>
                         </div>
                     </div>
 
-                <?php
-                }
+                <?php endforeach;
 
-            } ?>
+            endforeach; ?>
 
 
             <div class="col-sm-12 col-lg-12">
                 <div class="btns-box">
-                    <a class="btn-yellow" href="<?php echo get_post_type_archive_link( 'services' ); ?>">View All Services</a>
+                    <a class="btn-yellow" href="<?php echo get_post_type_archive_link( 'services' ); ?>"><?php echo the_field('view_all_title_button','option'); ?></a>
                 </div>
             </div>
 
@@ -225,7 +220,7 @@ get_header(); ?>
 
             <div class="col-sm-12 col-lg-12 col-md-12">
                 <div class="btns-box">
-                    <a class="btn-yellow" href="<?php echo get_post_type_archive_link( 'post' ); ?>">View More News</a>
+                    <a class="btn-yellow" href="<?php echo get_post_type_archive_link( 'post' ); ?>"> <?php echo the_field('view_more_news_title_button','option'); ?>  </a>
                 </div>
             </div>
 
