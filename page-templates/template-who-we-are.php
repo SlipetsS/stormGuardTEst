@@ -46,7 +46,7 @@ get_header(); ?>
                     // Use variables below ?>
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="started-box-one">
-                            <img src="<?php echo $image; ?>" />
+                            <img src="<?php echo($image['sizes']['category-thumbnail']); ?>" />
                             <div class="started-box-one_link">
                                 <h5> <a href="<?php echo $link; ?>">
                                         <?php echo $title; ?>
