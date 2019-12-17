@@ -344,7 +344,10 @@ function easytuts_services_post() {
 
 add_action('init', 'easytuts_services_post');
 
-function my_taxonomies_services() {
+/**
+ * Creating Taxonomy for CPT Services
+ */
+function fnc_taxonomies_services() {
     $labels = array(
         'name' => _x('Service Categories', 'taxonomy general name'),
         'singular_name' => _x('Service Category', 'taxonomy singular name'),
@@ -369,7 +372,7 @@ function my_taxonomies_services() {
     register_taxonomy('services_category', 'services', $args);
 }
 
-add_action('init', 'my_taxonomies_services', 0);
+add_action('init', 'fnc_taxonomies_services', 0);
 
 /**
  * Creating Post Type Testimonials

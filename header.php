@@ -112,7 +112,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-lg-12 col-md-12">
-                    <?php the_breadcrumb(); ?>
+                    <?php if (function_exists('the_breadcrumb')) {
+                        the_breadcrumb();
+                    } ?>
                 </div>
             </div>
         </div>

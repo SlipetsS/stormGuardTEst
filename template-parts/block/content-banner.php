@@ -45,10 +45,7 @@ $image = get_field('banner_image') ?: 295;
         </div>
 
     </div>
-
-
 <?php
 endif; ?>
-
 
 <?php
