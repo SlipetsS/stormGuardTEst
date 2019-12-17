@@ -56,13 +56,16 @@ get_header(); ?>
                             ?>
 
                             <?php if( $image ): ?>
-                                <a href="<?php echo get_term_link($term->slug, 'services_category');?>"><img src="<?php echo $image; ?>" alt=""/></a>
+                                <a href="<?php echo get_term_link($term->slug, 'services_category');?>">
+                                    <img src="<?php echo $image; ?>" alt=""/>
+                                </a>
                             <?php endif; ?>
 
-                            <?php echo '<h5>'. $sub_category->name . '</h5>';?>
-                            <p><?php
-                                echo $current_term->description; ?>
-                            </p>
+                            <h5>
+                                <?php echo $sub_category->name; ?>
+                            </h5>
+<!--                            --><?php //echo '<h5>'. $sub_category->name . '</h5>';?>
+                            <p><?php echo $current_term->description; ?></p>
                         </div>
                     </div>
 

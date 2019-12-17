@@ -115,16 +115,15 @@ function storm_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'storm_widgets_init' );
-
-
+/**
+ * Enqueue scripts and styles for slick slider.
+ */
 function slick_slider_scripts_and_styles() {
-    if(is_page_template('inc/template-home.php')):
-
+    if(is_page_template('template-parts/template-home.php')):
         //Enqueue our slider script
         wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', null, null, true );
         //Enqueue our slider style
         wp_enqueue_style( 'slick', get_template_directory_uri().'/css/slick.css', null, null );
-
     endif;
 }
 add_action( 'wp_enqueue_scripts', 'slick_slider_scripts_and_styles' );
@@ -213,7 +212,6 @@ function my_acf_init() {
 
     }
 }
-
 
 function my_acf_block_render_callback( $block ) {
     $slug = str_replace('acf/', '', $block['name']);
