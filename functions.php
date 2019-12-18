@@ -192,7 +192,6 @@ if (defined('JETPACK__VERSION')) {
 /**
  * Function for New Blocks ACF
  */
-add_action('acf/init', 'fnc_acf_init');
 function fnc_acf_init() {
 
     // check function exists
@@ -219,6 +218,7 @@ function fnc_acf_init() {
         ));
     }
 }
+add_action('acf/init', 'fnc_acf_init', 10, 0);
 
 function fnc_acf_block_render_callback($block) {
     $slug = str_replace('acf/', '', $block['name']);
@@ -287,7 +287,6 @@ if (function_exists('acf_add_options_page')) {
 /**
  * Post Type Projects
  */
-
 if (function_exists('easytuts_projects_post')) {
     function easytuts_projects_post() {
         $labels = array(
@@ -316,7 +315,7 @@ if (function_exists('easytuts_projects_post')) {
         register_post_type('projects', $args);
     }
 }
-add_action('init', 'easytuts_projects_post');
+add_action('init', 'easytuts_projects_post', 10, 0);
 
 /**
  * Creating Post Type Services
@@ -350,7 +349,7 @@ if (function_exists('easytuts_services_post')) {
     }
 }
 
-add_action('init', 'easytuts_services_post');
+add_action('init', 'easytuts_services_post',10, 0);
 
 /**
  * Creating Taxonomy for CPT Services
@@ -382,7 +381,7 @@ if (function_exists('fnc_taxonomies_services')) {
     }
 }
 
-add_action('init', 'fnc_taxonomies_services', 0);
+add_action('init', 'fnc_taxonomies_services', 10, 0);
 
 /**
  * Creating Post Type Testimonials
@@ -416,7 +415,7 @@ if (function_exists('easytuts_testimonials_post')) {
     }
 }
 
-add_action('init', 'easytuts_testimonials_post');
+add_action('init', 'easytuts_testimonials_post', 10, 0);
 
 /**
  *  Function Custom Excerpt
@@ -445,7 +444,7 @@ if (function_exists('wpdocs_theme_setup')) {
         add_image_size('category-thumbnail', 384, 244, true);
     }
 }
-add_action('after_setup_theme', 'wpdocs_theme_setup');
+add_action('after_setup_theme', 'wpdocs_theme_setup', 10, 0);
 
 /**
  *  Filter Delete Title from Pagination
