@@ -287,63 +287,67 @@ if (function_exists('acf_add_options_page')) {
 /**
  * Post Type Projects
  */
-function easytuts_projects_post() {
-    $labels = array(
-        'name' => _x('Projects', 'post type general name'),
-        'singular_name' => _x('Project', 'post type singular name'),
-        'add_new' => _x('Add New', 'project'),
-        'add_new_item' => __('Add New Projects'),
-        'edit_item' => __('Edit Project'),
-        'new_item' => __('New Project'),
-        'all_items' => __('All Projects'),
-        'view_item' => __('View Project'),
-        'search_items' => __('Search Project'),
-        'not_found' => __('No game found'),
-        'not_found_in_trash' => __('No game found in the Trash'),
-        'parent_item_colon' => '',
-        'menu_name' => 'Projects'
-    );
-    $args = array(
-        'labels' => $labels,
-        'description' => 'Holds projects and game specific data',
-        'public' => true,
-        'menu_position' => 4,
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
-        'has_archive' => true,
-    );
-    register_post_type('projects', $args);
-}
 
+if (function_exists('easytuts_projects_post')) {
+    function easytuts_projects_post() {
+        $labels = array(
+            'name' => _x('Projects', 'post type general name'),
+            'singular_name' => _x('Project', 'post type singular name'),
+            'add_new' => _x('Add New', 'project'),
+            'add_new_item' => __('Add New Projects'),
+            'edit_item' => __('Edit Project'),
+            'new_item' => __('New Project'),
+            'all_items' => __('All Projects'),
+            'view_item' => __('View Project'),
+            'search_items' => __('Search Project'),
+            'not_found' => __('No game found'),
+            'not_found_in_trash' => __('No game found in the Trash'),
+            'parent_item_colon' => '',
+            'menu_name' => 'Projects'
+        );
+        $args = array(
+            'labels' => $labels,
+            'description' => 'Holds projects and game specific data',
+            'public' => true,
+            'menu_position' => 4,
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+            'has_archive' => true,
+        );
+        register_post_type('projects', $args);
+    }
+}
 add_action('init', 'easytuts_projects_post');
 
 /**
  * Creating Post Type Services
  */
-function easytuts_services_post() {
-    $labels = array(
-        'name' => _x('Residential', 'post type general name'),
-        'singular_name' => _x('Service', 'post type singular name'),
-        'add_new' => _x('Add New', 'service'),
-        'add_new_item' => __('Add New Services'),
-        'edit_item' => __('Edit Service'),
-        'new_item' => __('New Service'),
-        'all_items' => __('All Services'),
-        'view_item' => __('View Service'),
-        'search_items' => __('Search Service'),
-        'not_found' => __('No service found'),
-        'not_found_in_trash' => __('No service found in the Trash'),
-        'parent_item_colon' => '',
-        'menu_name' => 'Services'
-    );
-    $args = array(
-        'labels' => $labels,
-        'description' => 'Holds services and service specific data',
-        'public' => true,
-        'menu_position' => 5,
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
-        'has_archive' => true,
-    );
-    register_post_type('services', $args);
+if (function_exists('easytuts_services_post')) {
+    function easytuts_services_post() {
+        $labels = array(
+            'name' => _x('Residential', 'post type general name'),
+            'singular_name' => _x('Service', 'post type singular name'),
+            'add_new' => _x('Add New', 'service'),
+            'add_new_item' => __('Add New Services'),
+            'edit_item' => __('Edit Service'),
+            'new_item' => __('New Service'),
+            'all_items' => __('All Services'),
+            'view_item' => __('View Service'),
+            'search_items' => __('Search Service'),
+            'not_found' => __('No service found'),
+            'not_found_in_trash' => __('No service found in the Trash'),
+            'parent_item_colon' => '',
+            'menu_name' => 'Services'
+        );
+        $args = array(
+            'labels' => $labels,
+            'description' => 'Holds services and service specific data',
+            'public' => true,
+            'menu_position' => 5,
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+            'has_archive' => true,
+        );
+        register_post_type('services', $args);
+    }
 }
 
 add_action('init', 'easytuts_services_post');
@@ -351,29 +355,31 @@ add_action('init', 'easytuts_services_post');
 /**
  * Creating Taxonomy for CPT Services
  */
-function fnc_taxonomies_services() {
-    $labels = array(
-        'name' => _x('Service Categories', 'taxonomy general name'),
-        'singular_name' => _x('Service Category', 'taxonomy singular name'),
-        'search_items' => __('Search Service Categories'),
-        'all_items' => __('All Service Categories'),
-        'parent_item' => __('Parent Service Category'),
-        'parent_item_colon' => __('Parent Service Category:'),
-        'edit_item' => __('Edit Service Category'),
-        'update_item' => __('Update Service Category'),
-        'add_new_item' => __('Add New Service Category'),
-        'new_item_name' => __('New Service Category'),
-        'menu_name' => __('Services Categories'),
-    );
-    $args = array(
-        'labels' => $labels,
-        'hierarchical' => true,
-        'show_ui' => true,
-        'show_admin_column' => true,
-        'query_var' => true,
-        'rewrite' => array('slug' => 'services'),
-    );
-    register_taxonomy('services_category', 'services', $args);
+if (function_exists('fnc_taxonomies_services')) {
+    function fnc_taxonomies_services() {
+        $labels = array(
+            'name' => _x('Service Categories', 'taxonomy general name'),
+            'singular_name' => _x('Service Category', 'taxonomy singular name'),
+            'search_items' => __('Search Service Categories'),
+            'all_items' => __('All Service Categories'),
+            'parent_item' => __('Parent Service Category'),
+            'parent_item_colon' => __('Parent Service Category:'),
+            'edit_item' => __('Edit Service Category'),
+            'update_item' => __('Update Service Category'),
+            'add_new_item' => __('Add New Service Category'),
+            'new_item_name' => __('New Service Category'),
+            'menu_name' => __('Services Categories'),
+        );
+        $args = array(
+            'labels' => $labels,
+            'hierarchical' => true,
+            'show_ui' => true,
+            'show_admin_column' => true,
+            'query_var' => true,
+            'rewrite' => array('slug' => 'services'),
+        );
+        register_taxonomy('services_category', 'services', $args);
+    }
 }
 
 add_action('init', 'fnc_taxonomies_services', 0);
@@ -381,31 +387,33 @@ add_action('init', 'fnc_taxonomies_services', 0);
 /**
  * Creating Post Type Testimonials
  */
-function easytuts_testimonials_post() {
-    $labels = array(
-        'name' => _x('Testimonials', 'post type general name'),
-        'singular_name' => _x('Testimonial', 'post type singular name'),
-        'add_new' => _x('Add New', 'testimonial'),
-        'add_new_item' => __('Add New Testimonials'),
-        'edit_item' => __('Edit Testimonial'),
-        'new_item' => __('New Testimonial'),
-        'all_items' => __('All Testimonials'),
-        'view_item' => __('View Testimonial'),
-        'search_items' => __('Search Testimonial'),
-        'not_found' => __('No service found'),
-        'not_found_in_trash' => __('No service found in the Trash'),
-        'parent_item_colon' => '',
-        'menu_name' => 'Testimonials'
-    );
-    $args = array(
-        'labels' => $labels,
-        'description' => 'Holds testimonials and testimonial specific data',
-        'public' => true,
-        'menu_position' => 6,
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
-        'has_archive' => true,
-    );
-    register_post_type('testimonials', $args);
+if (function_exists('easytuts_testimonials_post')) {
+    function easytuts_testimonials_post() {
+        $labels = array(
+            'name' => _x('Testimonials', 'post type general name'),
+            'singular_name' => _x('Testimonial', 'post type singular name'),
+            'add_new' => _x('Add New', 'testimonial'),
+            'add_new_item' => __('Add New Testimonials'),
+            'edit_item' => __('Edit Testimonial'),
+            'new_item' => __('New Testimonial'),
+            'all_items' => __('All Testimonials'),
+            'view_item' => __('View Testimonial'),
+            'search_items' => __('Search Testimonial'),
+            'not_found' => __('No service found'),
+            'not_found_in_trash' => __('No service found in the Trash'),
+            'parent_item_colon' => '',
+            'menu_name' => 'Testimonials'
+        );
+        $args = array(
+            'labels' => $labels,
+            'description' => 'Holds testimonials and testimonial specific data',
+            'public' => true,
+            'menu_position' => 6,
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+            'has_archive' => true,
+        );
+        register_post_type('testimonials', $args);
+    }
 }
 
 add_action('init', 'easytuts_testimonials_post');
@@ -413,37 +421,43 @@ add_action('init', 'easytuts_testimonials_post');
 /**
  *  Function Custom Excerpt
  */
-function get_excerpt() {
-    $excerpt = get_the_content();
-    $excerpt = preg_replace(" ([.*?])", '', $excerpt);
-    $excerpt = strip_shortcodes($excerpt);
-    $excerpt = strip_tags($excerpt);
-    $excerpt = substr($excerpt, 0, 350);
-    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
-    $excerpt = trim(preg_replace('/\s+/', ' ', $excerpt));
-    $excerpt = $excerpt . '. <a href="' . get_the_permalink() . '">Read More</a>';
-    return $excerpt;
+if (function_exists('get_excerpt')) {
+    function get_excerpt() {
+        $excerpt = get_the_content();
+        $excerpt = preg_replace(" ([.*?])", '', $excerpt);
+        $excerpt = strip_shortcodes($excerpt);
+        $excerpt = strip_tags($excerpt);
+        $excerpt = substr($excerpt, 0, 350);
+        $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+        $excerpt = trim(preg_replace('/\s+/', ' ', $excerpt));
+        $excerpt = $excerpt . '. <a href="' . get_the_permalink() . '">Read More</a>';
+        return $excerpt;
+    }
 }
 
 /**
  *  Function Cropping Images
  */
-function wpdocs_theme_setup() {
-    add_image_size('service-thumbnail', 84, 84, true);
-    add_image_size('projects-thumbnail', 127, 127, true);
-    add_image_size('category-thumbnail', 384, 244, true);
+if (function_exists('wpdocs_theme_setup')) {
+    function wpdocs_theme_setup() {
+        add_image_size('service-thumbnail', 84, 84, true);
+        add_image_size('projects-thumbnail', 127, 127, true);
+        add_image_size('category-thumbnail', 384, 244, true);
+    }
 }
 add_action('after_setup_theme', 'wpdocs_theme_setup');
 
 /**
  *  Filter Delete Title from Pagination
  */
-function fnc_navigation_template( $template, $class ){
+if (function_exists('fnc_navigation_template')) {
+    function fnc_navigation_template( $template, $class ){
 
-    return '
-	<nav class="navigation %1$s" role="navigation">
-		<div class="nav-links">%3$s</div>
-	</nav>    
-	';
+        return '
+        <nav class="navigation %1$s" role="navigation">
+            <div class="nav-links">%3$s</div>
+        </nav>
+        ';
+    }
 }
 add_filter('navigation_markup_template', 'fnc_navigation_template', 10, 2 );
