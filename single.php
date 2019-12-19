@@ -10,18 +10,13 @@
 get_header();
 ?>
 
-<div class="container">
-    <div class="row">
+<?php
+while (have_posts()) :
+    the_post();
 
-        <?php
-        while (have_posts()) :
-            the_post();
-
-            get_template_part('template-parts/content', get_post_type());
-        endwhile;
-        ?>
-    </div>
-</div>
+    get_template_part('template-parts/content', get_post_type());
+endwhile;
+?>
 
 <?php
 get_sidebar();
